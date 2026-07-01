@@ -26,7 +26,7 @@ const siteUrl = "https://website-khaki-gamma-88.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${site.name} - ${site.degree}`,
+    default: `${site.name} - ${site.degree} Student`,
     template: `%s - ${site.name}`,
   },
   description: site.tagline,
