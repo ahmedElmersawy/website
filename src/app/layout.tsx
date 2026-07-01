@@ -21,7 +21,7 @@ const fraunces = Fraunces({
   axes: ["opsz", "SOFT", "WONK"],
 });
 
-const siteUrl = "https://ahmedelmersawy.com";
+const siteUrl = "https://website-khaki-gamma-88.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
