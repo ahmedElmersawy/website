@@ -6,7 +6,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { ResearchPreviewGrid } from "@/components/research/ResearchPreviewGrid";
 import { ProjectsGrid } from "@/components/projects/ProjectsGrid";
 import { site } from "@/content/site";
-import { awards } from "@/content/awards";
 
 function ViewAllLink({ href, label }: { href: string; label: string }) {
   return (
