@@ -47,13 +47,14 @@ export const projects: Project[] = [
     tier: "research",
     title: "Variance Collapse & Gate Density Divergence",
     forNonSpecialists:
-      "When you train a neural network, some of its internal units gradually stop learning. For some activation functions this is normal and expected; for others it's a sign of trouble. This project shows that whether it's normal or a problem is fully predictable before you even start training, using a property anyone training a model can check in advance.",
+      "When you train a neural network, some of its internal units gradually stop learning. For some activation functions this is normal and expected; for others it's a sign of trouble. This project shows that whether it's normal or a problem is predictable, for the tested activation and optimizer combinations, before you even start training — using a property anyone can check in advance.",
     description:
-      "A hook-based instrumentation framework that recovers the exact gradient gate of any elementwise activation function, and a derived predictor (based on BatchNorm's known variance shrinkage under weight decay) that determines from a single, training-free quantity whether gate density rises (GELU/SiLU/Mish) or falls (ReLU) during ordinary training, and why that split disappears under AdamW.",
+      "A hook-based instrumentation framework that recovers the exact gradient gate of any elementwise activation function, and a derived predictor (based on BatchNorm's known variance shrinkage under weight decay) that predicts, for the tested configurations, from a single training-free quantity whether gate density rises (GELU/SiLU/Mish) or falls (ReLU) during ordinary training — and why that split disappears under AdamW.",
     stack: ["Python", "PyTorch", "CIFAR-native ResNet/VGG/ViT", "SLURM / A100"],
     keyResults: [
       "48/48 architecture-fixed runs confirm the ReLU-vs-smooth-activation gate-density split (sign test p=2.44×10⁻⁴)",
       "The same predictor, fed AdamW's measured statistics, correctly anticipates AdamW's different outcome with zero new free parameters",
+      "Directional claims validated across ~500 total runs spanning CNNs, MLP-Mixer, and Transformer-Encoder architectures on CIFAR, Tiny-ImageNet, and Places365",
     ],
     githubUrl: "https://github.com/ahmedElmersawy/variance-collapse-gate-density",
     demoLabel: "Phase transition in gate density",
