@@ -77,7 +77,7 @@ export default function RootLayout({
       name: site.university,
     },
     email: `mailto:${site.email}`,
-    sameAs: [site.social.github, site.social.linkedin, site.social.scholar],
+    sameAs: [site.social.github, site.social.linkedin],
     url: siteUrl,
     description: site.tagline,
   };

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GraduationCap, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 import { navItems, site } from "@/content/site";
 
@@ -52,15 +52,6 @@ export function Footer() {
               className="flex h-10 w-10 items-center justify-center rounded-full border border-navy-border text-muted transition-colors hover:border-gold hover:text-gold"
             >
               <LinkedinIcon size={18} />
-            </a>
-            <a
-              href={site.social.scholar}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="Google Scholar"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-navy-border text-muted transition-colors hover:border-gold hover:text-gold"
-            >
-              <GraduationCap size={18} />
             </a>
           </div>
         </div>
