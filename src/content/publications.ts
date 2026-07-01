@@ -6,7 +6,7 @@ export type Publication = {
   year: number;
   type: "conference" | "journal" | "workshop" | "preprint";
   /** Plain-language status badge - never implies peer-reviewed publication unless true. */
-  status: "Conference Poster" | "Research Artifact";
+  status: "Conference Poster";
   tags: string[];
   citationCount: number; // accurate count, not yet eligible for citations
   pdfUrl?: string;
@@ -38,7 +38,7 @@ export const publications: Publication[] = [
     venue: "Midwest Machine Learning Symposium (MMLS) 2026, Poster",
     year: 2026,
     type: "workshop",
-    status: "Research Artifact",
+    status: "Conference Poster",
     tags: ["ai-llms"],
     citationCount: 0,
     pdfUrl: "/papers/variance-collapse-gate-density.pdf",
