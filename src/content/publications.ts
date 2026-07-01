@@ -6,7 +6,7 @@ export type Publication = {
   year: number;
   type: "conference" | "journal" | "workshop" | "preprint";
   /** Plain-language status badge - never implies peer-reviewed publication unless true. */
-  status: "Conference Poster" | "Manuscript in Submission" | "Research Artifact";
+  status: "Conference Poster" | "Research Artifact";
   tags: string[];
   citationCount: number; // accurate count, not yet eligible for citations
   pdfUrl?: string;
@@ -35,10 +35,10 @@ export const publications: Publication[] = [
     id: "variance-collapse-2026",
     title: "Variance Collapse Predicts When Gate Density Diverges by Activation Class",
     authors: ["A. Elmersawy"],
-    venue: "Submitted to NeurIPS 2026 (anonymized draft); poster, Midwest Machine Learning Symposium (MMLS) 2026",
+    venue: "Midwest Machine Learning Symposium (MMLS) 2026, Poster",
     year: 2026,
-    type: "preprint",
-    status: "Manuscript in Submission",
+    type: "workshop",
+    status: "Research Artifact",
     tags: ["ai-llms"],
     citationCount: 0,
     pdfUrl: "/papers/variance-collapse-gate-density.pdf",

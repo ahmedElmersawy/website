@@ -31,11 +31,6 @@ const highlights = [
     sublabel: "National Science Foundation, 2025",
   },
   {
-    id: "presidential-scholarship",
-    label: "Presidential Scholarship",
-    sublabel: "Purdue University, 2021–2026",
-  },
-  {
     id: "ece-deans-list",
     label: "ECE Dean's List",
     sublabel: "Purdue University, 2023–2026",

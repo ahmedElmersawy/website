@@ -44,15 +44,6 @@ export const awards: Award[] = [
     description: "Recipient of the EESAT Student Program Award.",
   },
   {
-    id: "presidential-scholarship",
-    tier: "secondary",
-    title: "Presidential Scholarship",
-    org: "Purdue University",
-    date: "2021 - 2026",
-    description:
-      "Awarded the Presidential Scholarship by Purdue University in recognition of academic excellence.",
-  },
-  {
     id: "ece-deans-list",
     tier: "secondary",
     title: "ECE Dean's List & Semester Honors",

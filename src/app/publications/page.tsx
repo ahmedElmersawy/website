@@ -13,7 +13,7 @@ export default function PublicationsPage() {
       <SectionHeading
         eyebrow="Publications"
         title="Papers & preprints"
-        description="Neither entry below is peer-reviewed yet: one is a conference poster, the other a manuscript currently under anonymous review. Status is labeled on each entry."
+        description="Research output to date: one conference poster presented at DAC 2026, one working manuscript presented at MMLS 2026. Status is labeled on each entry."
       />
       <PublicationsList />
     </div>
