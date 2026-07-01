@@ -57,7 +57,7 @@ export function Footer() {
         </div>
 
         <p className="mt-10 text-xs text-muted-dim">
-          © {new Date().getFullYear()} {site.name}. Built with Next.js, Three.js, and Framer Motion.
+          © {new Date().getFullYear()} {site.name}.
         </p>
       </div>
     </footer>
