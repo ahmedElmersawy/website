@@ -74,8 +74,8 @@ export default function Home() {
               <p>
                 My long-term interest is in AI systems that understand and adapt to their
                 own computational cost: systems that are not just accurate, but resource-aware
-                by design. I&rsquo;m actively looking for PhD programs and research collaborations
-                in AI systems, learned optimization, and ML theory.
+                by design. I&rsquo;m interested in research opportunities in AI systems,
+                learned optimization, and ML theory.
               </p>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function Home() {
             Get in touch
           </p>
           <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
-            Open to PhD programs and research collaborations.
+            Open to research opportunities.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
             {site.shortBio}
