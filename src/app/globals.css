@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  /* Warm editorial light theme. Token names "navy"/"navy-light"/"navy-border"
+     are legacy from an earlier dark palette - kept to avoid renaming every
+     usage - but now resolve to warm cream/charcoal tones. */
+  --color-paper: #faf7f0;
+  --color-navy: #f2ede0;
+  --color-navy-light: #eae2cc;
+  --color-navy-border: rgba(31, 36, 48, 0.14);
+  --color-gold: #b45309;
+  --color-gold-bright: #7c3a0a;
+  --color-ink: #1f2430;
+  --color-muted: #5b5f6b;
+  --color-muted-dim: #65604f;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-navy: var(--color-navy);
+  --color-navy-light: var(--color-navy-light);
+  --color-navy-border: var(--color-navy-border);
+  --color-gold: var(--color-gold);
+  --color-gold-bright: var(--color-gold-bright);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-muted-dim: var(--color-muted-dim);
+
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* thin gold-tinted scrollbar for a more premium feel */
+* {
+  scrollbar-color: var(--color-gold) var(--color-navy);
+  scrollbar-width: thin;
+}
