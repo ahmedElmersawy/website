@@ -46,4 +46,4 @@ next-env.d.ts
 CONTENT_TODO.md
 .tmp-shot.mjs
 .claude/settings.local.json
-*.pdf
+/*.pdf
