@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# personal files / drafts
+*.heic
+*.HEIC
+CONTENT_TODO.md
+.tmp-shot.mjs
+.claude/settings.local.json
+*.pdf
