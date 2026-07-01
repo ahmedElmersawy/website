@@ -65,7 +65,7 @@ export function Hero() {
           {/* Text content */}
           <div className="max-w-2xl">
             <p className="animate-fade-up font-mono text-sm font-medium uppercase tracking-[0.2em] text-gold">
-              {site.degree}
+              {site.degree} Student
             </p>
             <h1
               className="animate-fade-up mt-4 font-display text-5xl font-medium tracking-tight text-ink sm:text-6xl lg:text-7xl"
