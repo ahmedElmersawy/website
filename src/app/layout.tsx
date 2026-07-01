@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: site.name }],
   openGraph: {
-    title: `${site.name} - ${site.degree}`,
+    title: `${site.name} - ${site.degree} Student`,
     description: site.tagline,
     url: siteUrl,
     siteName: site.name,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} - ${site.degree}`,
+    title: `${site.name} - ${site.degree} Student`,
     description: site.tagline,
   },
   robots: {

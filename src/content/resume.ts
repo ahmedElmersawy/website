@@ -57,7 +57,7 @@ export const teachingExperience: ExperienceEntry[] = [
     role: "Undergraduate Teaching Assistant, ECE 57000 (AI) & ECE 2k8 Lab",
     org: "Purdue University, School of ECE",
     location: "West Lafayette, IN",
-    date: "01/2026",
+    date: "01/2026 - 05/2026",
     details: [
       "Held office hours supporting machine learning and AI concepts.",
       "Evaluated final project presentations, assessing methodology and technical rigor.",
