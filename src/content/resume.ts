@@ -19,7 +19,7 @@ export const education: EducationEntry[] = [
     degree: "Bachelor of Science in Electrical and Computer Engineering",
     institution: "Purdue University",
     location: "West Lafayette, IN",
-    date: "2023 - 2026 (expected)",
+    date: "2023 - 2026",
     details: [
       "GPA: 3.77.",
       "Graduate-level coursework: Artificial Intelligence, Machine Learning, Data Mining, Advanced Computer Networks, Applied Cryptography, Embedded Systems.",
