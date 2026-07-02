@@ -16,7 +16,7 @@ export type ExperienceEntry = {
 
 export const education: EducationEntry[] = [
   {
-    degree: "B.Sc. Electrical and Computer Engineering",
+    degree: "Bachelor of Science in Electrical and Computer Engineering",
     institution: "Purdue University",
     location: "West Lafayette, IN",
     date: "2023 - 2026 (expected)",
