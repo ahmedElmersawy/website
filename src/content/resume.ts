@@ -16,7 +16,7 @@ export type ExperienceEntry = {
 
 export const education: EducationEntry[] = [
   {
-    degree: "B.S. Electrical and Computer Engineering",
+    degree: "M.S. Electrical and Computer Engineering",
     institution: "Purdue University",
     location: "West Lafayette, IN",
     date: "2023 - 2026 (expected)",
@@ -30,7 +30,7 @@ export const education: EducationEntry[] = [
 
 export const researchExperience: ExperienceEntry[] = [
   {
-    role: "Undergraduate Research Assistant",
+    role: "Graduate Research Assistant",
     org: "Purdue University, Duality Lab (Advisor: Prof. James Davis)",
     location: "West Lafayette, IN",
     date: "08/2025 - Present",
@@ -54,7 +54,7 @@ export const researchExperience: ExperienceEntry[] = [
 
 export const teachingExperience: ExperienceEntry[] = [
   {
-    role: "Undergraduate Teaching Assistant, ECE 57000 (AI) & ECE 2k8 Lab",
+    role: "Teaching Assistant, ECE 57000 (AI) & ECE 2k8 Lab",
     org: "Purdue University, School of ECE",
     location: "West Lafayette, IN",
     date: "01/2026 - 05/2026",

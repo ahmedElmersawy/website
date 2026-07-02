@@ -26,7 +26,7 @@ const siteUrl = "https://ahmedelmersawy.online";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${site.name} - ${site.degree} Student`,
+    default: `${site.name} - ${site.degree}`,
     template: `%s - ${site.name}`,
   },
   description: site.tagline,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: site.name }],
   openGraph: {
-    title: `${site.name} - ${site.degree} Student`,
+    title: `${site.name} - ${site.degree}`,
     description: site.tagline,
     url: siteUrl,
     siteName: site.name,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} - ${site.degree} Student`,
+    title: `${site.name} - ${site.degree}`,
     description: site.tagline,
   },
   robots: {
@@ -71,7 +71,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: site.name,
-    jobTitle: `Undergraduate Researcher, ${site.degree}`,
+    jobTitle: `Graduate Research Assistant, ${site.degree}`,
     affiliation: {
       "@type": "CollegeOrUniversity",
       name: site.university,

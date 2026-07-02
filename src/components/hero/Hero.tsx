@@ -53,7 +53,7 @@ export function Hero() {
             <div className="relative h-32 w-32 overflow-hidden rounded-full border-2 border-gold/40 shadow-lg md:h-44 md:w-44">
               <Image
                 src="/images/headshot.jpg"
-                alt="Ahmed Elmersawy, undergraduate researcher at Purdue University"
+                alt="Ahmed Elmersawy, graduate researcher at Purdue University"
                 fill
                 sizes="(max-width: 768px) 128px, 176px"
                 className="object-cover object-top"
@@ -65,7 +65,7 @@ export function Hero() {
           {/* Text content */}
           <div className="max-w-2xl">
             <p className="animate-fade-up font-mono text-sm font-medium uppercase tracking-[0.2em] text-gold">
-              {site.degree} Student
+              {site.degree}
             </p>
             <h1
               className="animate-fade-up mt-4 font-display text-5xl font-medium tracking-tight text-ink sm:text-6xl lg:text-7xl"

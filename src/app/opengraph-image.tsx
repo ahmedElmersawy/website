@@ -96,7 +96,7 @@ export default function OgImage() {
             gap: 24,
           }}
         >
-          {["B.S. ECE · Expected 2026", "Multi-Objective LLM Optimization", "Neural Network Training Dynamics"].map(
+          {["M.S. ECE · Purdue University", "Multi-Objective LLM Optimization", "Neural Network Training Dynamics"].map(
             (tag) => (
               <div
                 key={tag}

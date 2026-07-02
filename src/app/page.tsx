@@ -56,7 +56,7 @@ export default function Home() {
             </div>
             <div className="space-y-4 text-base leading-relaxed text-ink/90">
               <p>
-                I&rsquo;m an undergraduate researcher at Purdue University&rsquo;s Duality Lab,
+                I&rsquo;m a graduate researcher at Purdue University&rsquo;s Duality Lab,
                 advised by Prof. James Davis. My work sits at the intersection of machine
                 learning and systems: I build AI systems that optimize code across competing
                 goals, and I study the training dynamics that determine when learning is
