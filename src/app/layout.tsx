@@ -71,7 +71,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: site.name,
-    jobTitle: `Graduate Research Assistant, ${site.degree}`,
+    jobTitle: `Undergraduate Research Assistant, ${site.degree}`,
     affiliation: {
       "@type": "CollegeOrUniversity",
       name: site.university,
