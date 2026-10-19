@@ -57,10 +57,10 @@ export const projects: Project[] = [
       "Routing: general-purpose deciders performed near chance, and a lightweight classifier trained on target-model failure records recovered 64.9% of the quality gap (p < 0.05)",
     ],
     githubUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",
-    demoLabel: "Three decision points, one harness",
-    image: "/images/research/deciding-without-generating/overview.png",
+    demoLabel: "Where a decider sits in an LLM system",
+    image: "/images/research/deciding-without-generating/decider-placement.jpeg",
     imageAlt:
-      "Overview of the three decision points (router, cache guard, agent control) evaluated with interchangeable deciders on one shared harness; only the cache guard pays off, at 93.3% vs. 66.1% accuracy for a similarity threshold.",
+      "Pluggable deciders (Jev, frontier LLM, small LLM, open-weights local model, trained classifier) plugged into three decision points on one harness: a router that picks who generates, a cache guard whose decision replaces generation and pays off, and agent control where the decider sits in front of generation and doesn't pay off.",
     tags: ["ai-llms", "systems", "hpc"],
   },
   {
