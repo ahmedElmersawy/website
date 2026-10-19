@@ -123,10 +123,10 @@ export const researchProjects: ResearchProject[] = [
       "Benchmark audit: reported 70–72% model ceilings on the vCache benchmarks were artifacts of label errors (up to 15.7%) from transitive closure in union-find clustering; a direct pairwise protocol fixes this.",
     ],
     futureImpact:
-      "The paper is a working manuscript. Next steps are extending the evaluation to more agent domains beyond τ-bench airline and testing whether decision models trained on target-model error surfaces can close the routing gap that general-purpose deciders leave open.",
+      "The paper is under review at MLSys 2027. Next steps are extending the evaluation to more agent domains beyond τ-bench airline and testing whether decision models trained on target-model error surfaces can close the routing gap that general-purpose deciders leave open.",
     tags: ["ai-llms", "systems", "hpc"],
     connections: [],
     codeUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",
-    status: "ongoing",
+    status: "in-review",
   },
 ];

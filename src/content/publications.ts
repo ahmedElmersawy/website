@@ -6,7 +6,7 @@ export type Publication = {
   year: number;
   type: "conference" | "journal" | "workshop" | "preprint";
   /** Plain-language status badge - never implies peer-reviewed publication unless true. */
-  status: "Conference Poster";
+  status: "Conference Poster" | "Under Review";
   tags: string[];
   citationCount: number; // accurate count, not yet eligible for citations
   pdfUrl?: string;
@@ -17,6 +17,7 @@ export type Publication = {
 // Hydra is a conference poster (accepted/presented, not a refereed paper).
 // Variance Collapse is a manuscript currently under anonymous review,
 // with its foundational theory separately presented as a symposium poster.
+// Deciding Without Generating is under double-blind review at MLSys 2027, so no PDF is linked.
 export const publications: Publication[] = [
   {
     id: "hydra-dac-2026",
@@ -43,6 +44,18 @@ export const publications: Publication[] = [
     citationCount: 0,
     pdfUrl: "/papers/variance-collapse-gate-density.pdf",
     bibtexKey: "elmersawy2026variancecollapse",
+  },
+  {
+    id: "deciding-without-generating-mlsys-2027",
+    title: "Deciding Without Generating: Evaluating Typed Decision Models in LLM Systems",
+    authors: ["A. Elmersawy", "A. Alazizy"],
+    venue: "Conference on Machine Learning and Systems (MLSys) 2027, Under Review",
+    year: 2027,
+    type: "conference",
+    status: "Under Review",
+    tags: ["ai-llms", "systems", "hpc"],
+    citationCount: 0,
+    bibtexKey: "elmersawy2027deciding",
   },
 ];
 
