@@ -43,6 +43,27 @@ export const projects: Project[] = [
     tags: ["ai-llms", "code-opt", "rl"],
   },
   {
+    id: "deciding-without-generating",
+    tier: "research",
+    title: "Deciding Without Generating",
+    forNonSpecialists:
+      "AI systems often call a large, expensive language model just to make a small yes/no or pick-one choice, like which tool to use or whether a saved answer can be reused. This project tests when a small, specialized \"decision model\" can make those choices instead, and finds that it saves money only when its decision lets the system skip the expensive model entirely.",
+    description:
+      "An independent systems evaluation of typed, non-autoregressive decision models (TypeSafe Jev and the open Kev reproduction) against frontier and small LLMs, trained classifiers, and non-neural baselines on one shared harness across three LLM-system decision points: agent control (τ-bench airline), semantic cache guarding (GSM-Plus, LM-Arena, SearchQueries), and model routing (RouterBench). It measures accuracy, end-to-end task reward, latency, dollar cost, and NVML-metered GPU energy on A100s.",
+    stack: ["Python", "τ-bench", "vLLM", "OpenRouter", "Kev / Qwen3", "NVML energy metering", "SLURM / A100"],
+    keyResults: [
+      "Cache guarding: a typed decider reached 93.3% vs. 66.1% accuracy for embedding thresholds on GSM-Plus, cutting total system cost 28%, while a frontier LLM as cache guard cost 136% of always regenerating",
+      "Agent control: across 1,250 in-loop τ-bench episodes, one frontier LLM choosing and executing in a single call had the highest reward (0.792) and lowest cost ($0.033 per success), beating decoupled deciders",
+      "Routing: general-purpose deciders performed near chance, and a lightweight classifier trained on target-model failure records recovered 64.9% of the quality gap (p < 0.05)",
+    ],
+    githubUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",
+    demoLabel: "Three decision points, one harness",
+    image: "/images/research/deciding-without-generating/overview.png",
+    imageAlt:
+      "Overview of the three decision points (router, cache guard, agent control) evaluated with interchangeable deciders on one shared harness; only the cache guard pays off, at 93.3% vs. 66.1% accuracy for a similarity threshold.",
+    tags: ["ai-llms", "systems", "hpc"],
+  },
+  {
     id: "variance-collapse-gate-density",
     tier: "research",
     title: "Variance Collapse & Gate Density Divergence",

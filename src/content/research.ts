@@ -98,4 +98,35 @@ export const researchProjects: ResearchProject[] = [
     paperUrl: "/papers/variance-collapse-gate-density.pdf",
     status: "in-review",
   },
+  {
+    id: "deciding-without-generating",
+    title: "Deciding Without Generating",
+    summary:
+      "Research Thread 3: Efficient LLM Systems. An independent evaluation of typed, non-autoregressive decision models that output calibrated choices instead of generating tokens, tested on agent control, semantic cache guarding, and model routing. The result is one rule for when they pay off: only when the decision replaces downstream generation and cheap heuristics can't resolve the input.",
+    abstract:
+      "Compound AI systems routinely call generative LLMs to make discrete decisions rather than to write text: which tool an agent calls next, whether a cached answer can be reused, which model should serve a query. Specialized \"decision models\" such as TypeSafe Jev, and open reproductions such as Kev, skip token generation and output a calibrated distribution over typed choices directly, and vendors claim orders-of-magnitude savings in latency and cost. This project tests those claims independently. It runs a consistent matrix of interchangeable deciders (Jev, Kev at 0.8B/4B/9B, GPT-5.6, GPT-OSS-20B, Qwen3-8B, trained classifiers, and non-neural baselines) on one shared harness across three decision points, measuring decision accuracy, end-to-end task completion, latency, dollar cost, and GPU energy.",
+    whyItMatters:
+      "Swapping an LLM call for a cheap decider sounds like a free win, but where the decider sits decides whether it saves anything. The study condenses this into a cost identity, ΔCost = C_dec − P(skip) · C_gen. In agent control the generator has to run anyway to fill in tool arguments, so P(skip) = 0 and a separate decider only adds cost and a network round trip. In cache guarding a correct decision skips generation entirely, so a decider about 100× cheaper than generation saves real money. Those are guidelines a systems architect can apply before building the pipeline.",
+    methodology: [
+      "Agent control on τ-bench airline: offline replay of 1,076 verified decision states (5 repeats each, 5,380 decisions per decider), plus in-loop runs of arms A–E across 50 tasks × 5 trials (1,250 episodes) to separate decision cost from execution.",
+      "Semantic cache guarding on three workloads: numerically perturbed reasoning (GSM-Plus), chat paraphrases (vCache LM-Arena), and real search queries (vCache SearchQueries), against cosine thresholds, cross-encoders, and vCache's per-prompt error bounds.",
+      "Model routing on RouterBench (0-shot) between Mixtral-8x7B and GPT-4, comparing general-purpose deciders with a lightweight classifier trained on target-model failure records.",
+      "Local deciders (Kev, Qwen3-8B via vLLM) served on dedicated A100-80GB GPUs via SLURM, with per-call energy read from the NVML cumulative energy counter and reported as both gross and idle-subtracted net joules per decision.",
+      "Two-stage cascades (similarity threshold → decider, and Jev → frontier LLM) with escalation thresholds picked by offline sweeps before the live runs.",
+    ],
+    results: [
+      "Cache guarding: on GSM-Plus, Jev reached 93.3% accuracy vs. 66.1% for similarity thresholds (+27.2 points, p < 0.05), cutting total system cost 28%. A frontier LLM used as cache guard cost 136% of unconditional generation.",
+      "Cascades: on LM-Arena chat traffic, a threshold → Jev cascade called Jev on only 3.0% of requests and reached 97.4% accuracy at $5.91×10⁻⁷ per decision.",
+      "Agent control: a single frontier LLM choosing and executing in one call had the highest reward (0.792) at the lowest cost ($0.033 per success), so decoupled deciders didn't pay off.",
+      "Routing: untrained deciders recovered 60.9% of the quality gap vs. 50.0% for random, while a classifier trained on failure records recovered 64.9% (p < 0.05).",
+      "Energy: on identical A100 hardware, Kev-9B matched Qwen3-8B's replay accuracy (40.1% vs. 39.6%) using 22% less net energy per decision.",
+      "Benchmark audit: reported 70–72% model ceilings on the vCache benchmarks were artifacts of label errors (up to 15.7%) from transitive closure in union-find clustering; a direct pairwise protocol fixes this.",
+    ],
+    futureImpact:
+      "The paper is a working manuscript. Next steps are extending the evaluation to more agent domains beyond τ-bench airline and testing whether decision models trained on target-model error surfaces can close the routing gap that general-purpose deciders leave open.",
+    tags: ["ai-llms", "systems", "hpc"],
+    connections: [],
+    codeUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",
+    status: "ongoing",
+  },
 ];
