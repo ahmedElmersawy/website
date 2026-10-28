@@ -17,7 +17,7 @@ export type Publication = {
 // Hydra is a conference poster (accepted/presented, not a refereed paper).
 // Variance Collapse is a manuscript currently under anonymous review,
 // with its foundational theory separately presented as a symposium poster.
-// Deciding Without Generating is under double-blind review at MLSys 2027, so no PDF is linked.
+// Deciding Without Generating is under review at MLSys 2027; the linked PDF is the authors' preprint.
 export const publications: Publication[] = [
   {
     id: "hydra-dac-2026",
@@ -55,6 +55,7 @@ export const publications: Publication[] = [
     status: "Under Review",
     tags: ["ai-llms", "systems", "hpc"],
     citationCount: 0,
+    pdfUrl: "/papers/deciding-without-generating.pdf",
     bibtexKey: "elmersawy2027deciding",
   },
 ];

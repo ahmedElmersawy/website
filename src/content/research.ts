@@ -127,6 +127,7 @@ export const researchProjects: ResearchProject[] = [
     tags: ["ai-llms", "systems", "hpc"],
     connections: [],
     codeUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",
+    paperUrl: "/papers/deciding-without-generating.pdf",
     status: "in-review",
   },
 ];
