@@ -23,17 +23,20 @@ const EDGES: Edge[] = (() => {
 
 // ---------------------------------------------------------------------------
 // Node layout - positions as fraction of container and diameters in px.
-// Two independent research threads (one paper each), no edges between them.
+// Three independent research threads (one paper each), no edges between them.
+// Deciding Without Generating sits in the center as the largest node.
 // ---------------------------------------------------------------------------
 const POS: Record<string, { cx: number; cy: number }> = {
-  "hydra":             { cx: 0.27, cy: 0.5 },
-  "variance-collapse": { cx: 0.73, cy: 0.5 },
+  "hydra":                       { cx: 0.17, cy: 0.5 },
+  "deciding-without-generating": { cx: 0.5,  cy: 0.5 },
+  "variance-collapse":           { cx: 0.83, cy: 0.5 },
 };
 
 // Diameter ensures each label fits with ≥22 px padding from circle edge
 const DIAMETER: Record<string, number> = {
-  "hydra":             190,
-  "variance-collapse": 210,
+  "hydra":                       190,
+  "deciding-without-generating": 240,
+  "variance-collapse":           190,
 };
 
 const CONTAINER_H = 500; // desktop graph height (px)

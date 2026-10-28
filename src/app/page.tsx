@@ -59,17 +59,18 @@ export default function Home() {
                 I&rsquo;m an undergraduate researcher at Purdue University&rsquo;s Duality Lab,
                 advised by Prof. James Davis. My work sits at the intersection of machine
                 learning and systems: I build AI systems that optimize code across competing
-                goals, and I study the training dynamics that determine when learning is
-                even possible.
+                goals, and I measure when LLM systems are worth what they cost to run.
               </p>
               <p>
                 Two projects define this work. <strong className="font-medium text-ink">Hydra</strong> is a
                 preference-learning framework that teaches a code LLM to balance speed, memory,
                 and energy simultaneously, treating multi-objective optimization as a
-                decision problem, not just a metric. <strong className="font-medium text-ink">Variance Collapse</strong> asks
-                the complementary question: before you train anything, can you predict whether
-                the training signal will survive? It turns out you can, from a single
-                measurement made before training begins.
+                decision problem, not just a metric. <strong className="font-medium text-ink">Deciding Without Generating</strong>,
+                under review at MLSys 2027, asks when a small decision model can replace an LLM
+                inside a deployed system, measuring quality, cost, latency, and GPU energy: it
+                pays off as a semantic-cache guard but not for agent tool choice. Alongside these,
+                <strong className="font-medium text-ink"> Variance Collapse</strong> predicts, before
+                training begins, whether a network&rsquo;s training signal will survive.
               </p>
               <p>
                 My long-term interest is in AI systems that understand and adapt to their
@@ -114,8 +115,8 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 py-16">
         <SectionHeading
           eyebrow="Research"
-          title="One question, two directions"
-          description="How does training signal behave, and can it be steered? Hydra acts on it to guide multi-objective code optimization. Variance Collapse predicts when that signal exists at all."
+          title="One question, three directions"
+          description="What does it cost an AI system to learn and decide, and can it be steered? Hydra steers a code LLM across competing performance goals. Deciding Without Generating measures when a cheap decision model can stand in for an LLM. Variance Collapse predicts when training signal exists at all."
         />
         <ResearchPreviewGrid />
         <ViewAllLink href="/research" label="Explore the full research graph" />

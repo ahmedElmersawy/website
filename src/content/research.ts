@@ -66,10 +66,42 @@ export const researchProjects: ResearchProject[] = [
     status: "published",
   },
   {
+    id: "deciding-without-generating",
+    title: "Deciding Without Generating",
+    summary:
+      "Research Thread 2: Efficient LLM Systems. An independent evaluation of typed, non-autoregressive decision models that output calibrated choices instead of generating tokens, tested on agent control, semantic cache guarding, and model routing. The result is one rule for when they pay off: only when the decision replaces downstream generation and cheap heuristics can't resolve the input.",
+    abstract:
+      "Compound AI systems routinely call generative LLMs to make discrete decisions rather than to write text: which tool an agent calls next, whether a cached answer can be reused, which model should serve a query. Specialized \"decision models\" such as TypeSafe Jev, and open reproductions such as Kev, skip token generation and output a calibrated distribution over typed choices directly, and vendors claim orders-of-magnitude savings in latency and cost. This project tests those claims independently. It runs a consistent matrix of interchangeable deciders (Jev, Kev at 0.8B/4B/9B, GPT-5.6, GPT-OSS-20B, Qwen3-8B, trained classifiers, and non-neural baselines) on one shared harness across three decision points, measuring decision accuracy, end-to-end task completion, latency, dollar cost, and GPU energy.",
+    whyItMatters:
+      "Swapping an LLM call for a cheap decider sounds like a free win, but where the decider sits decides whether it saves anything. The study condenses this into a rule you can apply before building: add a standalone decider only where its decision can skip a generation, the input contains what the decision depends on, and the decision costs far less than the generation it may save. In agent control the generator has to run anyway to write the tool call, so a separate decider only adds cost. In cache guarding a correct decision skips generation entirely, and a decider at about 2% of the frontier model’s cost pays off. In routing, whether the cheap model will fail isn’t visible in the prompt, so a classifier trained on that model’s record wins.",
+    methodology: [
+      "Agent control on τ-bench airline: offline replay of 1,076 verified decision states (5 repeats each, 5,380 decisions per decider), plus in-loop runs of arms A–E across 50 tasks × 5 trials (1,250 episodes) to separate decision cost from execution.",
+      "Semantic cache guarding on three workloads: numerically perturbed reasoning (GSM-Plus), chat paraphrases (vCache LM-Arena), and real search queries (vCache SearchQueries), against cosine thresholds, cross-encoders, and vCache's per-prompt error bounds.",
+      "Model routing on RouterBench (0-shot) between Mixtral-8x7B and GPT-4, comparing general-purpose deciders with a lightweight classifier trained on target-model failure records.",
+      "Local deciders (Kev, Qwen3-8B via vLLM) served on dedicated A100-80GB GPUs via SLURM, with per-call energy read from the NVML cumulative energy counter and reported as both gross and idle-subtracted net joules per decision.",
+      "Two-stage cascades (similarity threshold → decider, and Jev → frontier LLM) with escalation thresholds picked by offline sweeps before the live runs.",
+    ],
+    results: [
+      "Cache guarding: on GSM-Plus, Jev reached 93.3% accuracy vs. 66.1% for similarity thresholds (+27.2 points, p < 0.05), vs. 81.7% for a classifier trained on that dataset, at about 2% of the frontier model’s cost per decision. A frontier LLM used as cache guard raised total cost to 138% of running without a cache.",
+      "Cascades: calling Jev only when similarity falls in an ambiguous band was best or tied for best on both chat and search traffic; on LMArena it called Jev on just 3% of queries, at $6×10⁻⁷ per query.",
+      "Agent control: a single frontier LLM choosing and executing in one call tied for the best reward (79.2%) at the lowest cost ($0.033 per success); every separate decider added cost or lost reward.",
+      "Routing: a small DistilRoBERTa classifier trained on the cheap model’s failure record recovered 64.9% of the small-to-large quality gap (APGR 0.649), beating every general decider, Jev included (+0.040 APGR).",
+      "Energy: on identical A100 hardware, Kev-9B matched Qwen3-8B's replay accuracy (40.1% vs. 39.6%) using about 20% less energy and running 17% faster, far from the order-of-magnitude gap seen in API prices.",
+      "Benchmark audit: the vCache datasets label reuse by query class rather than by pair, so the pairs were relabeled directly under a guideline fixed in advance, changing 6.0% of LMArena and 15.7% of SearchQueries labels; the corrected labels are released with the reason for each change.",
+    ],
+    futureImpact:
+      "The paper is under review at MLSys 2027. Next steps are extending the evaluation to more agent domains beyond τ-bench airline and testing whether decision models trained on target-model error surfaces can close the routing gap that general-purpose deciders leave open.",
+    tags: ["ai-llms", "systems", "hpc"],
+    connections: [],
+    codeUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",
+    paperUrl: "/papers/deciding-without-generating.pdf",
+    status: "in-review",
+  },
+  {
     id: "variance-collapse",
     title: "Variance Collapse & Gate Density",
     summary:
-      "Research Thread 2: Optimization Dynamics & Learning Behavior. Whether the fraction of gradient-carrying units rises or falls during training is treated as activation-specific folklore. This derives and empirically validates a mechanistic predictor from a single training-free quantity, across nearly 500 experiments spanning CNNs, MLP-Mixers, and Transformers, three datasets, and three optimizer families, the complement to Hydra: instead of steering training signal, this asks when it structurally disappears.",
+      "Research Thread 3: Optimization Dynamics & Learning Behavior. Whether the fraction of gradient-carrying units rises or falls during training is treated as activation-specific folklore. This derives and empirically validates a mechanistic predictor from a single training-free quantity, across nearly 500 experiments spanning CNNs, MLP-Mixers, and Transformers, three datasets, and three optimizer families, the complement to Hydra: instead of steering training signal, this asks when it structurally disappears.",
     abstract:
       "Whether a unit's local gradient |f'(x)| stays active or dies off during training its gate density is usually treated as activation-specific folklore: 'ReLU dies, GELU doesn't.' That folklore matters in practice (it drives intuitions about which activation to pick, when to worry about dead units, and whether gradient sparsity is safe to exploit for pruning), but it had no derivation, only anecdote. This work shows the direction gate density moves is not folklore but a derived consequence of a single, training-free quantity. Under coupled-weight-decay optimizers (SGD, Adam), the post-BatchNorm pre-activation variance collapses during training for every activation tested. Whether that collapse drives gate density toward 0 or 1 is predicted, across the tested activations, architectures, and optimizer regimes, by each activation's fixed threshold-crossing location, computable with no training via automatic differentiation. Under AdamW's decoupled weight decay, variance no longer collapses and the identical predictor, fed AdamW's own measured statistics with zero new free parameters, correctly anticipates a qualitatively different, uniform decline across every activation. The gate vocabulary and the threshold-crossing mechanism originate in an earlier, fully synthetic study working with a fixed single-layer convolutional reconstruction problem and a tunable sigmoid stiffness α, that study derives the same gradient gate Γ(x) = |h'(Ax)| and proves a phase transition between recoverable and unrecoverable gradient-based optimization. It carries over via an exact mathematical correspondence between Softplus's derivative and the logistic sigmoid, and is preserved as this paper's originating context.",
     whyItMatters:
@@ -96,38 +128,6 @@ export const researchProjects: ResearchProject[] = [
     connections: [],
     codeUrl: "https://github.com/ahmedElmersawy/variance-collapse-gate-density",
     paperUrl: "/papers/variance-collapse-gate-density.pdf",
-    status: "in-review",
-  },
-  {
-    id: "deciding-without-generating",
-    title: "Deciding Without Generating",
-    summary:
-      "Research Thread 3: Efficient LLM Systems. An independent evaluation of typed, non-autoregressive decision models that output calibrated choices instead of generating tokens, tested on agent control, semantic cache guarding, and model routing. The result is one rule for when they pay off: only when the decision replaces downstream generation and cheap heuristics can't resolve the input.",
-    abstract:
-      "Compound AI systems routinely call generative LLMs to make discrete decisions rather than to write text: which tool an agent calls next, whether a cached answer can be reused, which model should serve a query. Specialized \"decision models\" such as TypeSafe Jev, and open reproductions such as Kev, skip token generation and output a calibrated distribution over typed choices directly, and vendors claim orders-of-magnitude savings in latency and cost. This project tests those claims independently. It runs a consistent matrix of interchangeable deciders (Jev, Kev at 0.8B/4B/9B, GPT-5.6, GPT-OSS-20B, Qwen3-8B, trained classifiers, and non-neural baselines) on one shared harness across three decision points, measuring decision accuracy, end-to-end task completion, latency, dollar cost, and GPU energy.",
-    whyItMatters:
-      "Swapping an LLM call for a cheap decider sounds like a free win, but where the decider sits decides whether it saves anything. The study condenses this into a rule you can apply before building: add a standalone decider only where its decision can skip a generation, the input contains what the decision depends on, and the decision costs far less than the generation it may save. In agent control the generator has to run anyway to write the tool call, so a separate decider only adds cost. In cache guarding a correct decision skips generation entirely, and a decider at about 2% of the frontier model’s cost pays off. In routing, whether the cheap model will fail isn’t visible in the prompt, so a classifier trained on that model’s record wins.",
-    methodology: [
-      "Agent control on τ-bench airline: offline replay of 1,076 verified decision states (5 repeats each, 5,380 decisions per decider), plus in-loop runs of arms A–E across 50 tasks × 5 trials (1,250 episodes) to separate decision cost from execution.",
-      "Semantic cache guarding on three workloads: numerically perturbed reasoning (GSM-Plus), chat paraphrases (vCache LM-Arena), and real search queries (vCache SearchQueries), against cosine thresholds, cross-encoders, and vCache's per-prompt error bounds.",
-      "Model routing on RouterBench (0-shot) between Mixtral-8x7B and GPT-4, comparing general-purpose deciders with a lightweight classifier trained on target-model failure records.",
-      "Local deciders (Kev, Qwen3-8B via vLLM) served on dedicated A100-80GB GPUs via SLURM, with per-call energy read from the NVML cumulative energy counter and reported as both gross and idle-subtracted net joules per decision.",
-      "Two-stage cascades (similarity threshold → decider, and Jev → frontier LLM) with escalation thresholds picked by offline sweeps before the live runs.",
-    ],
-    results: [
-      "Cache guarding: on GSM-Plus, Jev reached 93.3% accuracy vs. 66.1% for similarity thresholds (+27.2 points, p < 0.05), vs. 81.7% for a classifier trained on that dataset, at about 2% of the frontier model’s cost per decision. A frontier LLM used as cache guard raised total cost to 138% of running without a cache.",
-      "Cascades: calling Jev only when similarity falls in an ambiguous band was best or tied for best on both chat and search traffic; on LMArena it called Jev on just 3% of queries, at $6×10⁻⁷ per query.",
-      "Agent control: a single frontier LLM choosing and executing in one call tied for the best reward (79.2%) at the lowest cost ($0.033 per success); every separate decider added cost or lost reward.",
-      "Routing: a small DistilRoBERTa classifier trained on the cheap model’s failure record recovered 64.9% of the small-to-large quality gap (APGR 0.649), beating every general decider, Jev included (+0.040 APGR).",
-      "Energy: on identical A100 hardware, Kev-9B matched Qwen3-8B's replay accuracy (40.1% vs. 39.6%) using about 20% less energy and running 17% faster, far from the order-of-magnitude gap seen in API prices.",
-      "Benchmark audit: the vCache datasets label reuse by query class rather than by pair, so the pairs were relabeled directly under a guideline fixed in advance, changing 6.0% of LMArena and 15.7% of SearchQueries labels; the corrected labels are released with the reason for each change.",
-    ],
-    futureImpact:
-      "The paper is under review at MLSys 2027. Next steps are extending the evaluation to more agent domains beyond τ-bench airline and testing whether decision models trained on target-model error surfaces can close the routing gap that general-purpose deciders leave open.",
-    tags: ["ai-llms", "systems", "hpc"],
-    connections: [],
-    codeUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",
-    paperUrl: "/papers/deciding-without-generating.pdf",
     status: "in-review",
   },
 ];
