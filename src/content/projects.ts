@@ -52,8 +52,8 @@ export const projects: Project[] = [
       "An independent systems evaluation of typed, non-autoregressive decision models (TypeSafe Jev and the open Kev reproduction) against frontier and small LLMs, trained classifiers, and non-neural baselines on one shared harness across three LLM-system decision points: agent control (τ-bench airline), semantic cache guarding (GSM-Plus, LM-Arena, SearchQueries), and model routing (RouterBench). It measures accuracy, end-to-end task reward, latency, dollar cost, and NVML-metered GPU energy on A100s.",
     stack: ["Python", "τ-bench", "vLLM", "OpenRouter", "Kev / Qwen3", "NVML energy metering", "SLURM / A100"],
     keyResults: [
-      "Cache guarding: a typed decider reached 93.3% vs. 66.1% accuracy for embedding thresholds on GSM-Plus, cutting total system cost 28%, while a frontier LLM as cache guard cost 136% of always regenerating",
-      "Agent control: across 1,250 in-loop τ-bench episodes, one frontier LLM choosing and executing in a single call had the highest reward (0.792) and lowest cost ($0.033 per success), beating decoupled deciders",
+      "Cache guarding: on GSM-Plus math questions, the decision model decided correctly 93.3% of the time vs. 81.7% for a trained classifier and 66.1% for a similarity threshold, at about 2% of the frontier model’s cost per decision; a frontier LLM as guard raised total cost to 138% of running without a cache",
+      "Agent control: across 1,250 in-loop τ-bench episodes, one frontier LLM choosing and executing in a single call tied for the best reward (79.2%) at the lowest cost ($0.033 per success); every separate decider added cost or lost reward",
       "Routing: general-purpose deciders performed near chance, and a lightweight classifier trained on target-model failure records recovered 64.9% of the quality gap (p < 0.05)",
     ],
     githubUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",

@@ -47,7 +47,7 @@ export const publications: Publication[] = [
   },
   {
     id: "deciding-without-generating-mlsys-2027",
-    title: "Deciding Without Generating: Evaluating Typed Decision Models in LLM Systems",
+    title: "Deciding Without Generating: When Does a Standalone Decision Model Pay Off in LLM Systems?",
     authors: ["A. Elmersawy", "A. Alazizy"],
     venue: "Conference on Machine Learning and Systems (MLSys) 2027, Under Review",
     year: 2027,
