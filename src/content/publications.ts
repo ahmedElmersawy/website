@@ -15,8 +15,7 @@ export type Publication = {
 
 // Honest framing: neither entry below is a peer-reviewed publication yet.
 // Hydra is a conference poster (accepted/presented, not a refereed paper).
-// Variance Collapse is a manuscript currently under anonymous review,
-// with its foundational theory separately presented as a symposium poster.
+// Variance Collapse, theory and full study, was presented as a poster at MMLS 2026.
 // Deciding Without Generating is under review at MLSys 2027; the linked PDF is the authors' preprint.
 export const publications: Publication[] = [
   {

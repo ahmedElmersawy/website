@@ -31,7 +31,7 @@ export default function ProjectsPage() {
           {ta && (
             <li className="text-sm leading-relaxed text-muted">
               <span className="font-medium text-ink">{ta.role}</span>, {ta.org}.{" "}
-              {ta.details.join(" ")}
+              {ta.details?.join(" ")}
             </li>
           )}
           {outreach && (

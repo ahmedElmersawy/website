@@ -3,6 +3,7 @@ import { Download } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
   education,
+  professionalExperience,
   researchExperience,
   teachingExperience,
   skills,
@@ -12,7 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Resume",
-  description: "Education, research experience, teaching experience, and skills.",
+  description: "Education, professional experience, research experience, teaching experience, and skills.",
 };
 
 function ExperienceBlock({
@@ -71,6 +72,7 @@ export default function ResumePage() {
       </div>
 
       <ExperienceBlock title="Education" entries={education} />
+      <ExperienceBlock title="Professional Experience" entries={professionalExperience} />
       <ExperienceBlock title="Research Experience" entries={researchExperience} />
       <ExperienceBlock title="Teaching Experience" entries={teachingExperience} />
 

@@ -13,7 +13,7 @@ export default function PublicationsPage() {
       <SectionHeading
         eyebrow="Publications"
         title="Papers & preprints"
-        description="Research output to date: one conference poster presented at DAC 2026, one working manuscript presented at MMLS 2026. Status is labeled on each entry."
+        description="Research output to date: one conference poster presented at DAC 2026, one poster presented at MMLS 2026. Status is labeled on each entry."
       />
       <PublicationsList />
     </div>

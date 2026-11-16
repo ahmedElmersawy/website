@@ -56,8 +56,9 @@ export default function Home() {
             </div>
             <div className="space-y-4 text-base leading-relaxed text-ink/90">
               <p>
-                I&rsquo;m an undergraduate researcher at Purdue University&rsquo;s Duality Lab,
-                advised by Prof. James Davis. My work sits at the intersection of machine
+                I&rsquo;m an AI Solutions Engineer at Federal Working Group. Before that, I was an
+                undergraduate researcher at Purdue University&rsquo;s Duality Lab, advised by
+                Prof. James Davis. My work sits at the intersection of machine
                 learning and systems: I build AI systems that optimize code across competing
                 goals, and I measure when LLM systems are worth what they cost to run.
               </p>

@@ -71,10 +71,14 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: site.name,
-    jobTitle: `Undergraduate Research Assistant, ${site.degree}`,
-    affiliation: {
-      "@type": "CollegeOrUniversity",
+    jobTitle: site.degree,
+    worksFor: {
+      "@type": "Organization",
       name: site.university,
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Purdue University",
     },
     email: `mailto:${site.email}`,
     sameAs: [site.social.github, site.social.linkedin],

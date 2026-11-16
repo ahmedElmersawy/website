@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Ahmed Elmersawy, AI Systems & Code Optimization Research, Purdue University";
+export const alt = "Ahmed Elmersawy, AI Solutions Engineer, Federal Working Group";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -59,7 +59,7 @@ export default function OgImage() {
             fontFamily: "monospace",
           }}
         >
-          Purdue University · Duality Lab
+          AI Solutions Engineer · Federal Working Group
         </div>
 
         {/* name */}
@@ -96,7 +96,7 @@ export default function OgImage() {
             gap: 24,
           }}
         >
-          {["M.S. ECE · Purdue University", "Multi-Objective LLM Optimization", "Efficient LLM Systems"].map(
+          {["B.S. ECE · Purdue University", "Multi-Objective LLM Optimization", "Efficient LLM Systems"].map(
             (tag) => (
               <div
                 key={tag}

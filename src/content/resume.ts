@@ -11,7 +11,7 @@ export type ExperienceEntry = {
   org: string;
   location: string;
   date: string;
-  details: string[];
+  details?: string[];
 };
 
 export const education: EducationEntry[] = [
@@ -28,12 +28,26 @@ export const education: EducationEntry[] = [
   },
 ];
 
+export const professionalExperience: ExperienceEntry[] = [
+  {
+    role: "AI Solutions Engineer",
+    org: "Federal Working Group",
+    location: "Washington, DC",
+    date: "06/2026 - Present",
+    details: [
+      "Architect and develop AI-powered systems to automate operational workflows in healthcare and construction, translating business requirements into deployable software solutions.",
+      "Build document intelligence pipelines using LLMs, OCR, and structured data extraction to process unstructured documents, identify relevant information, and automate data entry and classification.",
+      "Develop AI agents and workflow automation systems that integrate business data, external APIs, and application backends to reduce manual processes and improve operational efficiency.",
+    ],
+  },
+];
+
 export const researchExperience: ExperienceEntry[] = [
   {
     role: "Undergraduate Research Assistant",
     org: "Purdue University, Duality Lab (Advisor: Prof. James Davis)",
     location: "West Lafayette, IN",
-    date: "08/2025 - Present",
+    date: "05/2026",
     details: [
       "Designed a DPO-based multi-objective LLM optimization framework (Hydra) with an adaptive Dirichlet sampling mechanism that dynamically reweights training objectives, achieving 46.7% latency and 36% energy reduction on held-out benchmarks.",
       "Fine-tuned a 7B-parameter code model (Qwen2.5-Coder-7B-Instruct, QLoRA) on a large-scale preference dataset across 5 system-level metrics using Purdue's HPC cluster infrastructure.",
