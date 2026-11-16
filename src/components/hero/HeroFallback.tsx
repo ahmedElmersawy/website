@@ -6,7 +6,7 @@ import { researchAreas } from "@/content/research";
 export function HeroFallback() {
   return (
     <div className="relative h-full w-full" aria-hidden="true">
-      <div className="absolute inset-0 [background:radial-gradient(circle_at_70%_30%,rgba(180,83,9,0.10),transparent_60%)]" />
+      <div className="absolute inset-0 [background:radial-gradient(circle_at_70%_30%,rgba(105,45,64,0.10),transparent_60%)]" />
       <ul className="absolute right-[6%] top-1/2 hidden -translate-y-1/2 flex-col gap-5 sm:flex">
         {researchAreas.map((area, i) => (
           <li

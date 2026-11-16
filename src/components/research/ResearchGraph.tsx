@@ -106,7 +106,7 @@ export function ResearchGraph({
               key={l.id}
               x1={l.x1} y1={l.y1}
               x2={l.x2} y2={l.y2}
-              stroke="#b45309"
+              stroke="#692d40"
               strokeOpacity={0.28}
               strokeWidth={1.5}
               strokeDasharray="6 5"
@@ -142,13 +142,13 @@ export function ResearchGraph({
                 top:    `calc(${pos.cy * 100}% - ${d / 2}px)`,
                 padding: 22,
                 boxShadow: isActive
-                  ? "0 6px 24px rgba(180,83,9,0.22)"
-                  : "0 2px 14px rgba(31,36,48,0.09)",
+                  ? "0 6px 24px rgba(105,45,64,0.22)"
+                  : "0 2px 14px rgba(36,33,31,0.09)",
               }}
               whileHover={!isActive ? {
                 scale: 1.06,
-                boxShadow: "0 8px 30px rgba(180,83,9,0.20)",
-                borderColor: "#b45309",
+                boxShadow: "0 8px 30px rgba(105,45,64,0.20)",
+                borderColor: "#692d40",
                 transition: { duration: 0.18, ease: "easeOut" },
               } : undefined}
               onClick={() => onSelect(project.id)}

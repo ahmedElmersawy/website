@@ -50,7 +50,7 @@ export function LatencyChart() {
           y1={HEIGHT - PADDING}
           x2={WIDTH - PADDING}
           y2={HEIGHT - PADDING}
-          stroke="#ddd4bd"
+          stroke="#ddd5c9"
         />
         {series.map((s) => (
           <g key={s.id}>

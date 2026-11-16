@@ -19,7 +19,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(380px circle at var(--x, 50%) var(--y, 0%), rgba(180,83,9,0.10), transparent 60%)",
+            "radial-gradient(380px circle at var(--x, 50%) var(--y, 0%), rgba(105,45,64,0.10), transparent 60%)",
         }}
       />
 

@@ -15,7 +15,7 @@ export default function OgImage() {
           justifyContent: "flex-end",
           width: "100%",
           height: "100%",
-          background: "#faf7f0",
+          background: "#f1ede5",
           padding: "64px 72px",
           fontFamily: "Georgia, serif",
           position: "relative",
@@ -29,7 +29,7 @@ export default function OgImage() {
             left: 0,
             right: 0,
             height: 6,
-            background: "#b45309",
+            background: "#692d40",
           }}
         />
 
@@ -43,7 +43,7 @@ export default function OgImage() {
             height: 520,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(180,83,9,0.08) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(105,45,64,0.08) 0%, transparent 70%)",
           }}
         />
 
@@ -55,7 +55,7 @@ export default function OgImage() {
             fontSize: 14,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#b45309",
+            color: "#692d40",
             fontFamily: "monospace",
           }}
         >
@@ -67,7 +67,7 @@ export default function OgImage() {
           style={{
             fontSize: 72,
             fontWeight: 500,
-            color: "#1f2430",
+            color: "#24211f",
             lineHeight: 1.05,
             marginBottom: 20,
           }}
@@ -79,7 +79,7 @@ export default function OgImage() {
         <div
           style={{
             fontSize: 26,
-            color: "#5b5f6b",
+            color: "#5c544d",
             lineHeight: 1.45,
             maxWidth: 760,
             marginBottom: 48,
@@ -104,9 +104,9 @@ export default function OgImage() {
                   display: "flex",
                   padding: "8px 18px",
                   borderRadius: 999,
-                  border: "1.5px solid rgba(180,83,9,0.35)",
+                  border: "1.5px solid rgba(105,45,64,0.35)",
                   fontSize: 13,
-                  color: "#b45309",
+                  color: "#692d40",
                   fontFamily: "monospace",
                   letterSpacing: "0.04em",
                 }}

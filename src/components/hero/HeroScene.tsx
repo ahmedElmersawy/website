@@ -75,8 +75,8 @@ function ResearchNode({
         >
           <icosahedronGeometry args={[0.34, 0]} />
           <meshStandardMaterial
-            color={hovered ? "#d9831f" : "#b45309"}
-            emissive="#b45309"
+            color={hovered ? "#d96b45" : "#692d40"}
+            emissive="#692d40"
             emissiveIntensity={hovered ? 0.45 : 0.18}
             roughness={0.35}
             metalness={0.25}
@@ -116,7 +116,7 @@ function ConnectingLines() {
         <Line
           key={i}
           points={pair}
-          color="#b45309"
+          color="#692d40"
           transparent
           opacity={0.22}
           lineWidth={1}
@@ -155,8 +155,8 @@ function Scene() {
   return (
     <group ref={group} scale={scale}>
       <ambientLight intensity={0.75} />
-      <pointLight position={[4, 3, 4]} intensity={1} color="#d9831f" />
-      <pointLight position={[-4, -2, -3]} intensity={0.35} color="#e8dec8" />
+      <pointLight position={[4, 3, 4]} intensity={1} color="#d96b45" />
+      <pointLight position={[-4, -2, -3]} intensity={0.35} color="#e6ded2" />
       <ConnectingLines />
       {nodes.map((n, i) => (
         <ResearchNode key={n.id} node={n} index={i} />

@@ -4,15 +4,19 @@
   /* Warm editorial light theme. Token names "navy"/"navy-light"/"navy-border"
      are legacy from an earlier dark palette - kept to avoid renaming every
      usage - but now resolve to warm cream/charcoal tones. */
-  --color-paper: #faf7f0;
-  --color-navy: #f2ede0;
-  --color-navy-light: #eae2cc;
-  --color-navy-border: rgba(31, 36, 48, 0.14);
-  --color-gold: #b45309;
-  --color-gold-bright: #7c3a0a;
-  --color-ink: #1f2430;
-  --color-muted: #5b5f6b;
-  --color-muted-dim: #65604f;
+  /* Editorial palette: ivory #F1EDE5, charcoal #24211F, burgundy #692D40,
+     burnt orange #D96B45 (highlights), taupe #B8AA9B (secondary). */
+  --color-paper: #f1ede5;
+  --color-navy: #e9e3d9;
+  --color-navy-light: #ddd4c7;
+  --color-navy-border: rgba(184, 170, 155, 0.6);
+  --color-gold: #692d40;
+  --color-gold-bright: #4e1f2f;
+  --color-ink: #24211f;
+  --color-muted: #5c544d;
+  --color-muted-dim: #6e6359;
+  --color-highlight: #d96b45;
+  --color-taupe: #b8aa9b;
 }
 
 @theme inline {
@@ -25,6 +29,8 @@
   --color-ink: var(--color-ink);
   --color-muted: var(--color-muted);
   --color-muted-dim: var(--color-muted-dim);
+  --color-highlight: var(--color-highlight);
+  --color-taupe: var(--color-taupe);
 
   --font-sans: var(--font-geist-sans);
   --font-display: var(--font-fraunces);
