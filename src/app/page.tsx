@@ -28,16 +28,19 @@ const themes = [
 
 const phdQuestions = [
   {
-    title: "Learning when not to generate.",
-    body: "In Deciding Without Generating, general-purpose deciders routed between models at near chance, yet a small classifier trained on the cheaper model's own failure record recovered 64.9% of the quality gap. I want to understand why: can a system learn a model of its own errors well enough to decide, per input, how much computation a request deserves, and can that decision come with guarantees rather than only benchmark wins?",
+    title: "When should an LLM system pay for generation?",
+    area: "LLM serving, routing & caching · selective prediction",
+    body: "In Deciding Without Generating, a frontier LLM used as a cache guard cost more than having no cache at all (138%), while a small decision model reached 93.3% accuracy at about 2% of the cost. For routing, only a classifier trained on the cheaper model's own failures helped, recovering 64.9% of the quality gap. I want to treat routing, caching, and agent control as one learning-to-defer problem, with guarantees rather than benchmark wins.",
   },
   {
-    title: "Making computation an objective, not an afterthought.",
-    body: "Hydra taught a code LLM to trade latency, memory, and energy in the code it writes. I want to turn the same idea on the model itself: training models whose inference cost is a controllable objective, so the accuracy-cost trade-off is chosen at deployment time instead of being frozen in at training time.",
+    title: "Measured cost as a training signal.",
+    area: "Energy-aware ML · LLMs for code & kernels",
+    body: "Hydra used profiled execution as a DPO reward to teach a code LLM to trade latency, memory, and energy, but its energy was estimated from CPU cycles on a small benchmark. I want rewards from measured hardware cost, applied first to GPU kernels and inference code, and eventually to a model's own inference cost, so the accuracy-cost trade-off is chosen at deployment.",
   },
   {
-    title: "Predicting training behavior before training.",
-    body: "My variance-collapse predictor gets the direction of gate-density change right across nearly 500 runs, but not its magnitude, and it does not yet explain why AdamW prevents collapse. I want to build theory that tells a practitioner, before a run starts, what training will do, and to test it at ImageNet scale and beyond.",
+    title: "Predicting what training will do before it runs.",
+    area: "Training dynamics · theory of deep learning",
+    body: "My variance-collapse predictor gets the direction of gate-density change right from one training-free quantity, including AdamW in 12 of 12 settings, but not its magnitude or the reason AdamW prevents collapse. I want the theory that closes that gap, tested at ImageNet scale and beyond.",
   },
 ];
 
@@ -187,23 +190,28 @@ export default function Home() {
       <Section id="phd-interests" title="What I Want to Study in a PhD">
         <div className="max-w-[820px] leading-[1.65] text-ink/90">
           <p className="mb-5">
-            Each of my projects ended on a question I couldn&rsquo;t answer with the tools I had.
-            These are the three I want to spend a PhD on.
+            Each of my projects ended on a question it couldn&rsquo;t answer. These are the three I
+            want to spend a PhD on, where ML systems, efficient inference, and learning theory meet.
           </p>
           <ol className="list-none space-y-5">
             {phdQuestions.map((q, i) => (
               <li key={q.title} className="grid grid-cols-[28px_1fr]">
                 <span className="font-semibold text-gold-bright tabular-nums">{i + 1}.</span>
-                <p>
-                  <strong className="font-semibold text-ink">{q.title}</strong> {q.body}
-                </p>
+                <div>
+                  <h3 className="font-semibold text-ink">{q.title}</h3>
+                  <p className="mt-0.5 mb-1.5 text-sm font-medium tracking-[0.02em] text-gold-bright uppercase">
+                    {q.area}
+                  </p>
+                  <p>{q.body}</p>
+                </div>
               </li>
             ))}
           </ol>
           <p className="mt-5">
-            The common thread is AI systems that understand and allocate their own
-            computation, rather than simply becoming larger. I&rsquo;m looking for groups working
-            on ML systems, efficient inference, and the theory of training dynamics.
+            The common thread is AI systems that account for their own computation: what it
+            costs to train them, to run them, and to decide what to run. I&rsquo;m looking for groups
+            working on LLM serving and inference, energy-aware ML, LLMs for code and agents, or
+            training dynamics.
           </p>
         </div>
       </Section>
