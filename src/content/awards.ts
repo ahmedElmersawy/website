@@ -1,10 +1,10 @@
 export type Award = {
   id: string;
-  /** Primary = directly evidences research output (fellowship tied to a poster/paper). Secondary = everything else. */
-  tier: "primary" | "secondary";
+  /** Primary = directly evidences research output (fellowship tied to a poster/paper). Secondary = other honors. Service = leadership and service roles. */
+  tier: "primary" | "secondary" | "service";
   title: string;
   org: string;
-  date: string; // human readable, e.g. "2025"
+  date?: string; // human readable, e.g. "2025"; omitted when the CV gives no date
   description: string;
 };
 
@@ -44,6 +44,13 @@ export const awards: Award[] = [
     description: "Recipient of the EESAT Student Program Award.",
   },
   {
+    id: "ieee-comsoc-grant",
+    tier: "secondary",
+    title: "IEEE Communications Society Grant Award",
+    org: "IEEE Communications Society",
+    description: "Recipient of an IEEE Communications Society grant award.",
+  },
+  {
     id: "ece-deans-list",
     tier: "secondary",
     title: "ECE Dean's List & Semester Honors",
@@ -54,7 +61,7 @@ export const awards: Award[] = [
   },
   {
     id: "ieee-r8-humanitarian-ambassador",
-    tier: "secondary",
+    tier: "service",
     title: "IEEE Region 8 Humanitarian Ambassador",
     org: "IEEE Region 8 (Europe, Middle East, Africa)",
     date: "2024",

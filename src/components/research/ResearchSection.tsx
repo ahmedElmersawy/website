@@ -41,7 +41,7 @@ export function ResearchSection() {
           type="button"
           onClick={() => setActiveArea(null)}
           className={cn(
-            "rounded-full border px-4 py-1.5 text-xs font-medium transition-colors",
+            "rounded border px-4 py-1.5 text-xs font-medium transition-colors",
             activeArea === null
               ? "border-gold bg-gold/10 text-gold"
               : "border-navy-border text-muted hover:text-ink",
@@ -55,7 +55,7 @@ export function ResearchSection() {
             type="button"
             onClick={() => setActiveArea(area.id)}
             className={cn(
-              "rounded-full border px-4 py-1.5 text-xs font-medium transition-colors",
+              "rounded border px-4 py-1.5 text-xs font-medium transition-colors",
               activeArea === area.id
                 ? "border-gold bg-gold/10 text-gold"
                 : "border-navy-border text-muted hover:text-ink",
@@ -66,7 +66,7 @@ export function ResearchSection() {
         ))}
       </div>
 
-      <div className="mb-12 rounded-2xl border border-navy-border bg-navy/40 p-4">
+      <div className="mb-12 rounded-md border border-navy-border bg-navy/40 p-4">
         <ResearchGraph
           activeId={expandedId}
           dimmedIds={dimmedIds}

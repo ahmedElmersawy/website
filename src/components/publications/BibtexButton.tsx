@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Quote } from "lucide-react";
 
 export function BibtexButton({ bibtex, filename }: { bibtex: string; filename: string }) {
   const [copied, setCopied] = useState(false);
@@ -27,10 +26,10 @@ export function BibtexButton({ bibtex, filename }: { bibtex: string; filename: s
     <button
       type="button"
       onClick={handleClick}
-      className="inline-flex items-center gap-1.5 rounded-full border border-navy-border px-3 py-1.5 text-xs font-medium text-muted transition-colors hover:border-gold hover:text-gold"
+      className="cursor-pointer text-gold underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
+      aria-live="polite"
     >
-      {copied ? <Check size={13} /> : <Quote size={13} />}
-      {copied ? "Copied" : "BibTeX"}
+      {copied ? "BibTeX copied" : "BibTeX"}
     </button>
   );
 }

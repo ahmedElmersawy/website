@@ -21,8 +21,8 @@ export const education: EducationEntry[] = [
     location: "West Lafayette, IN",
     date: "2023 - 2026",
     details: [
-      "GPA: 3.77.",
-      "Graduate-level coursework: Artificial Intelligence, Machine Learning, Data Mining, Advanced Computer Networks, Applied Cryptography, Embedded Systems.",
+      "GPA: 3.77. Presidential Scholarship.",
+      "Graduate-level coursework: Artificial Intelligence, Machine Learning, Data Mining, Advanced Computer Networks, Applied Cryptography, Embedded Systems, Applied Quantum Computing.",
       "Upper-level coursework: Computer Vision, Natural Language Processing, Computer Security, Signals & Systems, Operations Research & Optimization.",
     ],
   },
@@ -68,14 +68,13 @@ export const researchExperience: ExperienceEntry[] = [
 
 export const teachingExperience: ExperienceEntry[] = [
   {
-    role: "Teaching Assistant, ECE 57000 (AI) & ECE 2k8 Lab",
+    role: "Undergraduate Teaching Assistant",
     org: "Purdue University, School of ECE",
     location: "West Lafayette, IN",
     date: "01/2026 - 05/2026",
     details: [
-      "Held office hours supporting machine learning and AI concepts.",
-      "Evaluated final project presentations, assessing methodology and technical rigor.",
-      "Mentored students in circuit design, measurement, and debugging.",
+      "ECE 57000, Artificial Intelligence (graduate-level): held weekly office hours, evaluated assignments and examinations, and assessed final project presentations for methodological rigor and experimental design.",
+      "ECE 20800, Electrical Engineering Lab II: mentored students in circuit design, measurement, and hardware debugging.",
     ],
   },
 ];
@@ -126,6 +125,8 @@ export const resumeAwards = [
   "IMS Connect Project Fellow, IEEE International Microwave Symposium",
   "NSF Grant Award",
   "EESAT Student Program Award",
+  "IEEE Communications Society Grant Award",
 ];
 
 export const resumePdfUrl = "/resume/ahmed-elmersawy-cv.pdf";
+export const resumePdfFilename = "Ahmed-Elmersawy-CV.pdf";

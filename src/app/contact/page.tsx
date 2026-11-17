@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-20">
+    <div className="mx-auto max-w-6xl px-6 pt-12 pb-16 md:px-8 *:max-w-3xl">
       <SectionHeading
         eyebrow="Contact"
         title="Let's talk"

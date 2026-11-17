@@ -35,7 +35,6 @@ export const projects: Project[] = [
       "46.7% latency, 36.0% CPU-cycle, and 36.0% energy reduction on a 7-program held-out Python inference benchmark",
       "35,752 DPO preference pairs built from the enriched PIE Python split, scored across 5 system-level metrics",
     ],
-    githubUrl: "https://github.com/ahmedElmersawy/code-optimization-RLFT",
     demoLabel: "Hydra framework overview",
     image: "/images/research/hydra/framework-overview.jpg",
     imageAlt:
@@ -49,11 +48,11 @@ export const projects: Project[] = [
     forNonSpecialists:
       "AI systems often call a large, expensive language model just to make a small yes/no or pick-one choice, like which tool to use or whether a saved answer can be reused. This project tests when a small, specialized \"decision model\" can make those choices instead, and finds that it saves money only when its decision lets the system skip the expensive model entirely.",
     description:
-      "An independent systems evaluation of typed, non-autoregressive decision models (TypeSafe Jev and the open Kev reproduction) against frontier and small LLMs, trained classifiers, and non-neural baselines on one shared harness across three LLM-system decision points: agent control (τ-bench airline), semantic cache guarding (GSM-Plus, LM-Arena, SearchQueries), and model routing (RouterBench). It measures accuracy, end-to-end task reward, latency, dollar cost, and NVML-metered GPU energy on A100s.",
-    stack: ["Python", "τ-bench", "vLLM", "OpenRouter", "Kev / Qwen3", "NVML energy metering", "SLURM / A100"],
+      "An independent systems evaluation of typed, non-autoregressive decision models (TypeSafe Jev and the open Kev reproduction) against frontier and small LLMs, trained classifiers, and non-neural baselines on one shared harness across three LLM-system decision points: agent control (τ²-bench airline), semantic cache guarding (GSM-Plus, LM-Arena, SearchQueries), and model routing (RouterBench). It measures accuracy, end-to-end task reward, latency, dollar cost, and NVML-metered GPU energy on A100s.",
+    stack: ["Python", "τ²-bench", "vLLM", "OpenRouter", "Kev / Qwen3", "NVML energy metering", "SLURM / A100"],
     keyResults: [
       "Cache guarding: on GSM-Plus math questions, the decision model decided correctly 93.3% of the time vs. 81.7% for a trained classifier and 66.1% for a similarity threshold, at about 2% of the frontier model’s cost per decision; a frontier LLM as guard raised total cost to 138% of running without a cache",
-      "Agent control: across 1,250 in-loop τ-bench episodes, one frontier LLM choosing and executing in a single call tied for the best reward (79.2%) at the lowest cost ($0.033 per success); every separate decider added cost or lost reward",
+      "Agent control: across 1,250 in-loop τ²-bench episodes, one frontier LLM choosing and executing in a single call tied for the best reward (79.2%) at the lowest cost ($0.033 per success); every separate decider added cost or lost reward",
       "Routing: general-purpose deciders performed near chance, and a lightweight classifier trained on target-model failure records recovered 64.9% of the quality gap (p < 0.05)",
     ],
     githubUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",
@@ -82,7 +81,7 @@ export const projects: Project[] = [
     image: "/images/research/variance-collapse/phase-transition.png",
     imageAlt:
       "Reconstruction IoU undergoes a sharp sigmoidal phase transition at sigmoid stiffness alpha*=28.28, with empirical measurements tightly matching the fitted theoretical curve.",
-    tags: ["ai-llms"],
+    tags: ["dynamics"],
   },
   {
     id: "feedback-atlas",

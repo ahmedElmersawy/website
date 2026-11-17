@@ -39,7 +39,7 @@ const DIAMETER: Record<string, number> = {
   "variance-collapse":           190,
 };
 
-const CONTAINER_H = 500; // desktop graph height (px)
+const CONTAINER_H = 320; // desktop graph height (px)
 
 // ---------------------------------------------------------------------------
 type LineData = { id: string; x1: number; y1: number; x2: number; y2: number };
@@ -93,8 +93,8 @@ export function ResearchGraph({
         ref={containerRef}
         className="relative hidden w-full md:block"
         style={{ height: CONTAINER_H }}
-        role="img"
-        aria-label="Network graph connecting related research projects"
+        role="group"
+        aria-label="The three research threads; select one to open its details below"
       >
         {/* Dashed connecting lines drawn between measured node centers */}
         <svg
@@ -184,7 +184,7 @@ export function ResearchGraph({
               key={project.id}
               type="button"
               className={cn(
-                "rounded-xl border-2 px-4 py-5 text-center text-[13px] font-semibold leading-snug transition-all duration-200",
+                "rounded-md border-2 px-4 py-5 text-center text-[13px] font-semibold leading-snug transition-all duration-200",
                 isActive
                   ? "border-gold bg-gold text-paper shadow-md"
                   : "border-gold/40 bg-paper text-ink",

@@ -6,9 +6,10 @@ const tierLabels: Record<Project["tier"], string> = {
   engineering: "Engineering Projects",
 };
 
-export function ProjectsGrid({ limit }: { limit?: number }) {
-  if (limit) {
-    const items = projects.slice(0, limit);
+export function ProjectsGrid({ limit, tier }: { limit?: number; tier?: Project["tier"] }) {
+  if (limit || tier) {
+    const pool = tier ? projects.filter((p) => p.tier === tier) : projects;
+    const items = limit ? pool.slice(0, limit) : pool;
     return (
       <div className="grid gap-6 sm:grid-cols-2">
         {items.map((project, i) => (
@@ -27,7 +28,7 @@ export function ProjectsGrid({ limit }: { limit?: number }) {
         if (items.length === 0) return null;
         return (
           <div key={tier}>
-            <p className="mb-6 font-mono text-xs font-medium uppercase tracking-[0.18em] text-gold">
+            <p className="mb-6 text-xl font-medium text-ink">
               {tierLabels[tier]}
             </p>
             <div className="grid gap-6 sm:grid-cols-2">

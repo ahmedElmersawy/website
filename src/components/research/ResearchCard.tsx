@@ -23,7 +23,7 @@ export function ResearchCard({
       id={project.id}
       layout
       className={cn(
-        "rounded-2xl border border-navy-border bg-navy/60 transition-opacity",
+        "rounded-md border border-navy-border bg-navy/60 transition-opacity",
         dimmed && !expanded ? "opacity-55" : "opacity-100",
       )}
     >
@@ -41,7 +41,7 @@ export function ResearchCard({
               return (
                 <span
                   key={tagId}
-                  className="rounded-full border border-navy-border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide text-muted"
+                  className="rounded border border-navy-border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide text-muted"
                 >
                   {area?.short ?? tagId}
                 </span>
@@ -134,7 +134,7 @@ export function ResearchCard({
                     href={project.codeUrl}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center gap-2 rounded-full border border-navy-border px-4 py-2 text-xs font-medium text-ink transition-colors hover:border-gold hover:text-gold"
+                    className="inline-flex items-center gap-2 rounded border border-navy-border px-4 py-2 text-xs font-medium text-ink transition-colors hover:border-gold hover:text-gold"
                   >
                     <GithubIcon size={14} /> Code
                   </a>
@@ -144,7 +144,7 @@ export function ResearchCard({
                     href={project.paperUrl}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center gap-2 rounded-full border border-navy-border px-4 py-2 text-xs font-medium text-ink transition-colors hover:border-gold hover:text-gold"
+                    className="inline-flex items-center gap-2 rounded border border-navy-border px-4 py-2 text-xs font-medium text-ink transition-colors hover:border-gold hover:text-gold"
                   >
                     <FileText size={14} /> Paper
                   </a>
@@ -154,7 +154,7 @@ export function ResearchCard({
                     href={project.posterUrl}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center gap-2 rounded-full border border-navy-border px-4 py-2 text-xs font-medium text-ink transition-colors hover:border-gold hover:text-gold"
+                    className="inline-flex items-center gap-2 rounded border border-navy-border px-4 py-2 text-xs font-medium text-ink transition-colors hover:border-gold hover:text-gold"
                   >
                     <ScrollText size={14} /> Poster
                   </a>

@@ -1,11 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
+/**
+ * Formerly a scroll-triggered fade-in. Content now renders statically, in keeping
+ * with a plain academic page; the wrapper is kept so existing call sites still work.
+ */
 export function Reveal({
   children,
-  delay = 0,
   className,
   as = "div",
 }: {
@@ -14,16 +14,6 @@ export function Reveal({
   className?: string;
   as?: "div" | "li";
 }) {
-  const Component = motion[as];
-  return (
-    <Component
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={className}
-    >
-      {children}
-    </Component>
-  );
+  const Component = as;
+  return <Component className={className}>{children}</Component>;
 }

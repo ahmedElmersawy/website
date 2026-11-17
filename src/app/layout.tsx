@@ -1,47 +1,42 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fraunces } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 import { Nav } from "@/components/nav/Nav";
 import { Footer } from "@/components/Footer";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  axes: ["opsz", "SOFT", "WONK"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
 const siteUrl = "https://ahmedelmersawy.online";
+const siteTitle = `${site.name} - AI Systems & Efficient ML Research`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${site.name} - ${site.degree}`,
+    default: siteTitle,
     template: `%s - ${site.name}`,
   },
   description: site.tagline,
   keywords: [
     "Ahmed Elmersawy",
     "Purdue University",
-    "AI research",
-    "reinforcement learning",
-    "large language models",
+    "AI systems research",
+    "efficient LLM systems",
+    "decision models",
+    "preference learning",
+    "DPO",
     "code optimization",
-    "high performance computing",
+    "training dynamics",
+    "machine learning",
   ],
   authors: [{ name: site.name }],
   openGraph: {
-    title: `${site.name} - ${site.degree}`,
+    title: siteTitle,
     description: site.tagline,
     url: siteUrl,
     siteName: site.name,
@@ -49,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} - ${site.degree}`,
+    title: siteTitle,
     description: site.tagline,
   },
   robots: {
@@ -89,7 +84,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${sourceSans.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -99,7 +94,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-paper text-ink">
         <Nav />
-        <main id="main-content" className="flex-1 pt-16">
+        <main id="main-content" className="flex-1">
           {children}
         </main>
         <Footer />

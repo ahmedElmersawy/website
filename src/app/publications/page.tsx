@@ -4,16 +4,17 @@ import { PublicationsList } from "@/components/publications/PublicationsList";
 
 export const metadata: Metadata = {
   title: "Publications",
-  description: "Publications, preprints, and conference papers.",
+  description:
+    "Papers and posters by Ahmed Elmersawy: MLSys 2027 submission (under review), DAC 2026 poster, and MMLS 2026 poster, with PDFs and BibTeX.",
 };
 
 export default function PublicationsPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-20">
+    <div className="mx-auto max-w-6xl px-6 pt-12 pb-16 md:px-8 *:max-w-3xl">
       <SectionHeading
         eyebrow="Publications"
         title="Papers & preprints"
-        description="Research output to date: one conference poster presented at DAC 2026, one poster presented at MMLS 2026. Status is labeled on each entry."
+        description="One first-author paper under review at MLSys 2027, a conference poster at DAC 2026, and a sole-author poster at MMLS 2026. Status is labeled on each entry."
       />
       <PublicationsList />
     </div>

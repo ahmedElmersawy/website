@@ -4,22 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
 import { navItems, site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
+function isActive(pathname: string, href: string) {
+  return href === "/" ? pathname === "/" : pathname.startsWith(href);
+}
+
 export function Nav() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -39,43 +34,35 @@ export function Nav() {
   return (
     <header
       ref={menuRef}
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "border-b border-navy-border/60 bg-paper/70 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent",
-      )}
+      className="sticky top-0 z-50 border-b border-rule bg-paper/95 backdrop-blur-sm"
     >
       <a
         href="#main-content"
-        className="fixed -top-full left-2 z-[100] rounded-md bg-gold px-3 py-2 text-sm font-medium text-paper focus:top-2"
+        className="fixed -top-full left-2 z-[100] rounded bg-gold px-3 py-2 text-sm font-medium text-paper focus:top-2"
       >
         Skip to content
       </a>
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 md:px-8">
         <Link
           href="/"
-          className="font-display text-lg font-medium tracking-tight text-ink transition-colors hover:text-gold"
+          className="whitespace-nowrap text-2xl font-semibold tracking-tight text-ink hover:no-underline"
         >
           {site.name}
         </Link>
 
-        <ul className="hidden items-center gap-1 md:flex" role="list">
+        <ul className="hidden items-center gap-1 lg:flex" role="list">
           {navItems.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
+            const active = isActive(pathname, item.href);
             return (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                    "whitespace-nowrap rounded px-2.5 py-1.5 text-[17px] font-medium transition-colors",
                     active
-                      ? "bg-gold/10 text-gold"
-                      : "text-muted hover:text-ink",
+                      ? "bg-pale font-semibold text-gold"
+                      : "text-ink/80 hover:bg-pale/60 hover:text-gold",
                   )}
                 >
                   {item.label}
@@ -91,46 +78,37 @@ export function Nav() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-ink md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded text-ink lg:hidden"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
-      <AnimatePresence>
-        {open && (
-          <motion.ul
-            id="mobile-menu"
-            role="list"
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
-            className="flex flex-col gap-1 border-t border-navy-border/60 bg-paper/95 px-6 py-4 backdrop-blur-md md:hidden"
-          >
-            {navItems.map((item) => {
-              const active =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
-              return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={active ? "page" : undefined}
-                    className={cn(
-                      "block rounded-lg px-3 py-3 text-base font-medium",
-                      active ? "bg-gold/10 text-gold" : "text-muted hover:text-ink",
-                    )}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </motion.ul>
-        )}
-      </AnimatePresence>
+      {open && (
+        <ul
+          id="mobile-menu"
+          role="list"
+          className="flex flex-col gap-1 border-t border-rule bg-paper px-6 py-4 lg:hidden"
+        >
+          {navItems.map((item) => {
+            const active = isActive(pathname, item.href);
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "block rounded px-3 py-2.5 text-base font-medium",
+                    active ? "bg-pale text-gold" : "text-ink/80 hover:text-gold",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </header>
   );
 }

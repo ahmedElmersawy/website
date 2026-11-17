@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Check, Copy, Download, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 import { site } from "@/content/site";
-import { resumePdfUrl } from "@/content/resume";
+import { resumePdfFilename, resumePdfUrl } from "@/content/resume";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
@@ -60,8 +60,8 @@ export function ContactSection() {
             href={link.href}
             target={link.external ? "_blank" : undefined}
             rel={link.external ? "noreferrer noopener" : undefined}
-            download={link.download ? true : undefined}
-            className="group flex items-center gap-4 rounded-2xl border border-navy-border bg-navy/50 p-5 transition-colors hover:border-gold"
+            download={link.download ? resumePdfFilename : undefined}
+            className="group flex items-center gap-4 rounded-md border border-navy-border bg-navy/50 p-5 transition-colors hover:border-gold"
           >
             <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-border text-gold transition-colors group-hover:border-gold">
               <link.icon size={18} />
@@ -77,7 +77,7 @@ export function ContactSection() {
       <button
         type="button"
         onClick={copyEmail}
-        className="flex w-full items-center gap-4 rounded-2xl border border-dashed border-navy-border p-5 text-left transition-colors hover:border-gold"
+        className="flex w-full items-center gap-4 rounded-md border border-dashed border-navy-border p-5 text-left transition-colors hover:border-gold"
       >
         <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-border text-gold">
           {copied ? <Check size={18} /> : <Copy size={18} />}

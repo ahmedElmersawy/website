@@ -12,20 +12,11 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -4 }}
-      className="group relative overflow-hidden rounded-2xl border border-navy-border bg-navy/50 p-7"
+      className="group relative overflow-hidden rounded-md border border-navy-border bg-navy/50 p-7 transition-colors duration-300 hover:border-gold/45"
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background:
-            "radial-gradient(380px circle at var(--x, 50%) var(--y, 0%), rgba(105,45,64,0.10), transparent 60%)",
-        }}
-      />
-
       <div className="relative">
         {project.image ? (
-          <div className="mb-4 flex h-44 items-center justify-center overflow-hidden rounded-xl border border-navy-border/70 bg-navy-light/40 p-2">
+          <div className="mb-4 flex h-44 items-center justify-center overflow-hidden rounded-md border border-navy-border/70 bg-navy-light/40 p-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
@@ -36,7 +27,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             />
           </div>
         ) : (
-          <div className="mb-4 flex h-44 items-center justify-center rounded-xl border border-navy-border/70 bg-navy-light/40 text-xs font-mono uppercase tracking-wide text-muted-dim">
+          <div className="mb-4 flex h-44 items-center justify-center rounded-md border border-navy-border/70 bg-navy-light/40 text-xs font-mono uppercase tracking-wide text-muted-dim">
             {project.demoLabel ?? "Visual demo"}
           </div>
         )}
@@ -61,7 +52,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           {project.stack.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-navy-border px-2.5 py-0.5 font-mono text-[10px] text-muted"
+              className="rounded border border-navy-border px-2.5 py-0.5 font-mono text-[10px] text-muted"
             >
               {tech}
             </span>

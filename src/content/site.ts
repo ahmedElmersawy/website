@@ -11,7 +11,7 @@ export const site = {
     github: "https://github.com/ahmedElmersawy",
     linkedin: "https://www.linkedin.com/in/ahmed-elmersawy/",
   },
-  location: "West Lafayette, Indiana",
+  location: "Washington, DC",
 } as const;
 
 export const navItems = [
@@ -19,7 +19,7 @@ export const navItems = [
   { label: "Research", href: "/research" },
   { label: "Publications", href: "/publications" },
   { label: "Projects", href: "/projects" },
-  { label: "Awards", href: "/awards" },
-  { label: "Resume", href: "/resume" },
+  { label: "Awards & Service", href: "/awards" },
+  { label: "CV", href: "/resume" },
   { label: "Contact", href: "/contact" },
 ] as const;

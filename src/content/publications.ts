@@ -3,10 +3,12 @@ export type Publication = {
   title: string;
   authors: string[];
   venue: string;
+  /** Compact venue tag shown beside the title, e.g. "DAC 2026". */
+  venueShort: string;
   year: number;
   type: "conference" | "journal" | "workshop" | "preprint";
   /** Plain-language status badge - never implies peer-reviewed publication unless true. */
-  status: "Conference Poster" | "Under Review";
+  status: "Conference Poster" | "Symposium Poster" | "Under Review";
   tags: string[];
   citationCount: number; // accurate count, not yet eligible for citations
   pdfUrl?: string;
@@ -19,23 +21,11 @@ export type Publication = {
 // Deciding Without Generating is under review at MLSys 2027; the linked PDF is the authors' preprint.
 export const publications: Publication[] = [
   {
-    id: "hydra-dac-2026",
-    title: "Hydra: Multi-Objective Software Optimization using Large Language Models",
-    authors: ["A. Gupte", "A. Elmersawy", "A. Lee", "S. Maxim"],
-    venue: "63rd Design Automation Conference (DAC), Poster, DAC Young Fellowship",
-    year: 2026,
-    type: "conference",
-    status: "Conference Poster",
-    tags: ["ai-llms", "code-opt", "rl"],
-    citationCount: 0,
-    pdfUrl: "/papers/hydra-multi-objective-code-optimization.pdf",
-    bibtexKey: "gupte2026hydra",
-  },
-  {
     id: "deciding-without-generating-mlsys-2027",
     title: "Deciding Without Generating: When Does a Standalone Decision Model Pay Off in LLM Systems?",
-    authors: ["A. Elmersawy", "A. Alazizy"],
+    authors: ["A. Elmersawy", "A. AlAzizy"],
     venue: "Conference on Machine Learning and Systems (MLSys) 2027, Under Review",
+    venueShort: "MLSys 2027",
     year: 2027,
     type: "conference",
     status: "Under Review",
@@ -45,13 +35,28 @@ export const publications: Publication[] = [
     bibtexKey: "elmersawy2027deciding",
   },
   {
+    id: "hydra-dac-2026",
+    title: "Hydra: Multi-Objective Software Optimization using Large Language Models",
+    authors: ["A. Gupte", "A. Elmersawy", "A. Lee", "S. Maxim"],
+    venue: "63rd Design Automation Conference (DAC), Poster, DAC Young Fellowship",
+    venueShort: "DAC 2026",
+    year: 2026,
+    type: "conference",
+    status: "Conference Poster",
+    tags: ["ai-llms", "code-opt", "rl"],
+    citationCount: 0,
+    pdfUrl: "/papers/hydra-multi-objective-code-optimization.pdf",
+    bibtexKey: "gupte2026hydra",
+  },
+  {
     id: "variance-collapse-2026",
     title: "Variance Collapse Predicts When Gate Density Diverges by Activation Class",
     authors: ["A. Elmersawy"],
     venue: "Midwest Machine Learning Symposium (MMLS) 2026, Poster",
+    venueShort: "MMLS 2026",
     year: 2026,
     type: "workshop",
-    status: "Conference Poster",
+    status: "Symposium Poster",
     tags: ["ai-llms"],
     citationCount: 0,
     pdfUrl: "/papers/variance-collapse-gate-density.pdf",

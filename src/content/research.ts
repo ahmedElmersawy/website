@@ -4,13 +4,14 @@ export type ResearchArea = {
   short: string;
 };
 
-// The 5 floating nodes in the hero 3D scene + filter tags used across the site.
+// The floating nodes in the hero 3D scene + filter tags used across the site.
 export const researchAreas: ResearchArea[] = [
   { id: "ai-llms", label: "AI & LLMs", short: "AI/LLMs" },
   { id: "code-opt", label: "Code Optimization", short: "Code Opt" },
   { id: "rl", label: "Reinforcement Learning", short: "RL" },
   { id: "hpc", label: "High Performance Computing", short: "HPC" },
   { id: "systems", label: "Systems Research", short: "Systems" },
+  { id: "dynamics", label: "Training Dynamics", short: "Dynamics" },
 ];
 
 export type ResearchProject = {
@@ -60,9 +61,8 @@ export const researchProjects: ResearchProject[] = [
       "explicit preference conditioning at inference time (steering the model toward a chosen trade-off via control tokens, without retraining), extending beyond the PIE Python benchmark to larger and more diverse codebases, and combining offline preference learning with limited online refinement as a hybrid approach. The current results are also explicitly preliminary: the correctness benchmark is small (7 hand-built programs), and the paper calls for evaluation on the larger PIE test split before drawing stronger generalization conclusions.",
     tags: ["ai-llms", "code-opt", "rl"],
     connections: [],
-    codeUrl: "https://github.com/ahmedElmersawy/code-optimization-RLFT",
+    // Code repo (code-optimization-RLFT) is private, so no public code link.
     paperUrl: "/papers/hydra-multi-objective-code-optimization.pdf",
-    posterUrl: "/papers/hydra-multi-objective-code-optimization.pdf",
     status: "published",
   },
   {
@@ -75,7 +75,7 @@ export const researchProjects: ResearchProject[] = [
     whyItMatters:
       "Swapping an LLM call for a cheap decider sounds like a free win, but where the decider sits decides whether it saves anything. The study condenses this into a rule you can apply before building: add a standalone decider only where its decision can skip a generation, the input contains what the decision depends on, and the decision costs far less than the generation it may save. In agent control the generator has to run anyway to write the tool call, so a separate decider only adds cost. In cache guarding a correct decision skips generation entirely, and a decider at about 2% of the frontier model’s cost pays off. In routing, whether the cheap model will fail isn’t visible in the prompt, so a classifier trained on that model’s record wins.",
     methodology: [
-      "Agent control on τ-bench airline: offline replay of 1,076 verified decision states (5 repeats each, 5,380 decisions per decider), plus in-loop runs of arms A–E across 50 tasks × 5 trials (1,250 episodes) to separate decision cost from execution.",
+      "Agent control on τ²-bench airline: offline replay of 1,076 verified decision states (5 repeats each, 5,380 decisions per decider), plus in-loop runs of arms A–E across 50 tasks × 5 trials (1,250 episodes) to separate decision cost from execution.",
       "Semantic cache guarding on three workloads: numerically perturbed reasoning (GSM-Plus), chat paraphrases (vCache LM-Arena), and real search queries (vCache SearchQueries), against cosine thresholds, cross-encoders, and vCache's per-prompt error bounds.",
       "Model routing on RouterBench (0-shot) between Mixtral-8x7B and GPT-4, comparing general-purpose deciders with a lightweight classifier trained on target-model failure records.",
       "Local deciders (Kev, Qwen3-8B via vLLM) served on dedicated A100-80GB GPUs via SLURM, with per-call energy read from the NVML cumulative energy counter and reported as both gross and idle-subtracted net joules per decision.",
@@ -90,7 +90,7 @@ export const researchProjects: ResearchProject[] = [
       "Benchmark audit: the vCache datasets label reuse by query class rather than by pair, so the pairs were relabeled directly under a guideline fixed in advance, changing 6.0% of LMArena and 15.7% of SearchQueries labels; the corrected labels are released with the reason for each change.",
     ],
     futureImpact:
-      "The paper is under review at MLSys 2027. Next steps are extending the evaluation to more agent domains beyond τ-bench airline and testing whether decision models trained on target-model error surfaces can close the routing gap that general-purpose deciders leave open.",
+      "The paper is under review at MLSys 2027. Next steps are extending the evaluation to more agent domains beyond τ²-bench airline and testing whether decision models trained on target-model error surfaces can close the routing gap that general-purpose deciders leave open.",
     tags: ["ai-llms", "systems", "hpc"],
     connections: [],
     codeUrl: "https://github.com/ahmedElmersawy/Deciding-Without-Generating",
@@ -124,10 +124,10 @@ export const researchProjects: ResearchProject[] = [
     ],
     futureImpact:
       "The paper is explicit about what it doesn't yet explain: it derives the direction of the effect, not its magnitude, and doesn't have a first-principles account of why AdamW's decoupled weight decay specifically prevents the variance collapse the mechanism depends on. ConvNeXt-Tiny is excluded from all claims as undertrained, and architecture families beyond CNNs, MLP-Mixer, and Transformer-Encoder along with full-scale ImageNet-1k remain untested. Closing those gaps, and testing whether the same threshold-crossing logic predicts gate dynamics in other architecture families, is the direct next step.",
-    tags: ["ai-llms"],
+    tags: ["dynamics"],
     connections: [],
     codeUrl: "https://github.com/ahmedElmersawy/variance-collapse-gate-density",
     paperUrl: "/papers/variance-collapse-gate-density.pdf",
-    status: "in-review",
+    status: "published",
   },
 ];

@@ -1,7 +1,10 @@
 import { cn } from "@/lib/utils";
 
+/**
+ * Plain page/section heading. `eyebrow` is accepted for compatibility but no longer
+ * rendered: the academic layout uses a single clear heading per section.
+ */
 export function SectionHeading({
-  eyebrow,
   title,
   description,
   align = "left",
@@ -16,21 +19,14 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "mb-12 max-w-2xl",
+        "mb-10 max-w-[720px]",
         align === "center" && "mx-auto text-center",
         className,
       )}
     >
-      {eyebrow && (
-        <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.18em] text-gold">
-          {eyebrow}
-        </p>
-      )}
-      <h2 className="font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
-        {title}
-      </h2>
+      <h1 className="text-3xl font-medium tracking-tight text-ink sm:text-[34px]">{title}</h1>
       {description && (
-        <p className="mt-4 text-base leading-relaxed text-muted">{description}</p>
+        <p className="mt-3 text-[17px] leading-[1.65] text-ink/80">{description}</p>
       )}
     </div>
   );
