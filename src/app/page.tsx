@@ -117,7 +117,7 @@ export default function Home() {
             </strong>
           </p>
           <p className="mb-4">
-            I&rsquo;m currently an AI Solutions Engineer at Federal Working Group. Before that, I
+            I&rsquo;m currently an AI Systems Engineer at Federal Working Group. Before that, I
             was an undergraduate researcher in Purdue&rsquo;s Duality Lab, advised by Prof. James
             Davis. My work spans preference learning for code optimization, the efficiency of
             LLM systems, and the training dynamics of deep networks, combining large-scale
@@ -153,7 +153,7 @@ export default function Home() {
             </summary>
             <div className="mt-3 space-y-3 rounded bg-pale px-5 py-4 text-ink/90">
               <p>
-                Ahmed Elmersawy is an AI Solutions Engineer at Federal Working Group in
+                Ahmed Elmersawy is an AI Systems Engineer at Federal Working Group in
                 Washington, DC. He received his B.S. in Computer Engineering from
                 Purdue University in 2026, where he held a Presidential Scholarship and was an
                 undergraduate researcher in the Duality Lab, advised by Prof. James Davis.

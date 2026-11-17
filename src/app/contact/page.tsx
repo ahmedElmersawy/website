@@ -13,7 +13,7 @@ export default function ContactPage() {
       <SectionHeading
         eyebrow="Contact"
         title="Let's talk"
-        description="I'm an AI Solutions Engineer at Federal Working Group and a Purdue ECE graduate; as an undergraduate I did research in Purdue's Duality Lab, advised by Prof. James Davis. Open to research collaborations and roles in AI systems. The fastest way to reach me is email."
+        description="I'm an AI Systems Engineer at Federal Working Group and a Purdue ECE graduate; as an undergraduate I did research in Purdue's Duality Lab, advised by Prof. James Davis. Open to research collaborations and roles in AI systems. The fastest way to reach me is email."
       />
       <ContactSection />
     </div>

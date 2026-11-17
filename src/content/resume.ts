@@ -30,7 +30,7 @@ export const education: EducationEntry[] = [
 
 export const professionalExperience: ExperienceEntry[] = [
   {
-    role: "AI Solutions Engineer",
+    role: "AI Systems Engineer",
     org: "Federal Working Group",
     location: "Washington, DC",
     date: "06/2026 - Present",

@@ -20,7 +20,7 @@ export const news: NewsItem[] = [
   },
   {
     date: "Jun 2026",
-    text: "Joined Federal Working Group as an AI Solutions Engineer in Washington, DC.",
+    text: "Joined Federal Working Group as an AI Systems Engineer in Washington, DC.",
   },
   {
     date: "May 2026",
