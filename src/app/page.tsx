@@ -38,9 +38,9 @@ const phdQuestions = [
     body: "Hydra used profiled execution as a DPO reward to teach a code LLM to trade latency, memory, and energy, but its energy was estimated from CPU cycles on a small benchmark. I want rewards from measured hardware cost, applied first to GPU kernels and inference code, and eventually to a model's own inference cost, so the accuracy-cost trade-off is chosen at deployment.",
   },
   {
-    title: "Predicting what training will do before it runs.",
-    area: "Training dynamics · theory of deep learning",
-    body: "My variance-collapse predictor gets the direction of gate-density change right from one training-free quantity, including AdamW in 12 of 12 settings, but not its magnitude or the reason AdamW prevents collapse. I want the theory that closes that gap, tested at ImageNet scale and beyond.",
+    title: "Predicting training behavior before paying for it.",
+    area: "Large-scale training · training dynamics",
+    body: "Large training runs are expensive to get wrong. My variance-collapse predictor reads one training-free quantity and gets the direction of gate-density change right, including AdamW in 12 of 12 settings, but not its magnitude or the reason AdamW prevents collapse. I want to close that gap and turn such predictors into pre-flight checks for training configurations, so problems surface before the GPU hours are spent, tested at ImageNet scale and beyond.",
   },
 ];
 
@@ -130,7 +130,7 @@ export default function Home() {
           <div className="mt-6 rounded-md border border-gold/25 border-l-[3px] border-l-gold bg-pale/50 px-5 py-4 text-ink/85">
             <p>
               <strong className="font-semibold text-gold-bright">PhD applications:</strong> I am
-              applying to PhD programs for Fall 2027 in machine learning and systems. My{" "}
+              applying to PhD programs for Fall 2027 in AI systems: the cost of LLM inference, agents, and large-scale training. My{" "}
               <a
                 href={resumePdfUrl}
                 download={resumePdfFilename}
@@ -210,8 +210,8 @@ export default function Home() {
           <p className="mt-5">
             The common thread is AI systems that account for their own computation: what it
             costs to train them, to run them, and to decide what to run. I&rsquo;m looking for groups
-            working on LLM serving and inference, energy-aware ML, LLMs for code and agents, or
-            training dynamics.
+            working on LLM serving and inference, LLMs for code and agents, energy-aware ML, or
+            large-scale training.
           </p>
         </div>
       </Section>
