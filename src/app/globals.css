@@ -4,12 +4,12 @@
   /* Warm editorial light theme. Token names "navy"/"navy-light"/"navy-border"
      are legacy from an earlier dark palette - kept to avoid renaming every
      usage - but now resolve to warm cream/charcoal tones. */
-  /* Editorial palette: ivory #F1EDE5, charcoal #24211F, burgundy #692D40,
+  /* Palette: white background, charcoal #24211F, charcoal #24211F, burgundy #692D40,
      burnt orange #D96B45 (highlights), taupe #B8AA9B (secondary). */
-  --color-paper: #f1ede5;
-  --color-navy: #e9e3d9;
-  --color-navy-light: #ddd4c7;
-  --color-navy-border: rgba(184, 170, 155, 0.6);
+  --color-paper: #ffffff;
+  --color-navy: #f8f5f4;
+  --color-navy-light: #efe8e6;
+  --color-navy-border: #e3d8d9;
   --color-gold: #692d40;
   --color-gold-bright: #4e1f2f;
   --color-ink: #24211f;
@@ -17,9 +17,9 @@
   --color-muted-dim: #6e6359;
   --color-highlight: #d96b45;
   --color-taupe: #b8aa9b;
-  /* Burgundy-tinted ivory for cards, callouts and the active nav item. */
-  --color-pale: #ebe0dc;
-  --color-rule: #ddd3c8;
+  /* Burgundy-tinted white for cards, callouts and the active nav item. */
+  --color-pale: #f4ecee;
+  --color-rule: #e9e0e1;
 }
 
 @theme inline {

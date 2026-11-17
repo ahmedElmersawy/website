@@ -15,7 +15,7 @@ export default function OgImage() {
           justifyContent: "flex-end",
           width: "100%",
           height: "100%",
-          background: "#f1ede5",
+          background: "#ffffff",
           padding: "64px 72px",
           fontFamily: "Georgia, serif",
           position: "relative",
