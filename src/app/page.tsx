@@ -26,7 +26,22 @@ const themes = [
   },
 ];
 
-const selectedAwards = awards.filter((a) => a.tier !== "service");
+const phdQuestions = [
+  {
+    title: "Learning when not to generate.",
+    body: "In Deciding Without Generating, general-purpose deciders routed between models at near chance, yet a small classifier trained on the cheaper model's own failure record recovered 64.9% of the quality gap. I want to understand why: can a system learn a model of its own errors well enough to decide, per input, how much computation a request deserves, and can that decision come with guarantees rather than only benchmark wins?",
+  },
+  {
+    title: "Making computation an objective, not an afterthought.",
+    body: "Hydra taught a code LLM to trade latency, memory, and energy in the code it writes. I want to turn the same idea on the model itself: training models whose inference cost is a controllable objective, so the accuracy-cost trade-off is chosen at deployment time instead of being frozen in at training time.",
+  },
+  {
+    title: "Predicting training behavior before training.",
+    body: "My variance-collapse predictor gets the direction of gate-density change right across nearly 500 runs, but not its magnitude, and it does not yet explain why AdamW prevents collapse. I want to build theory that tells a practitioner, before a run starts, what training will do, and to test it at ImageNet scale and beyond.",
+  },
+];
+
+const selectedAwards = awards.filter((a) => a.tier !== "service").slice(0, 6);
 
 function Section({
   id,
@@ -69,7 +84,7 @@ export default function Home() {
             <br />
             {site.university} · {site.location}
             <br />
-            B.S. ECE, Purdue University, 2026
+            B.S. Computer Engineering, Purdue, 2026
           </p>
           <div className="grid grid-cols-2 gap-2">
             <Link
@@ -139,7 +154,7 @@ export default function Home() {
             <div className="mt-3 space-y-3 rounded bg-pale px-5 py-4 text-ink/90">
               <p>
                 Ahmed Elmersawy is an AI Solutions Engineer at Federal Working Group in
-                Washington, DC. He received his B.S. in Electrical and Computer Engineering from
+                Washington, DC. He received his B.S. in Computer Engineering from
                 Purdue University in 2026, where he held a Presidential Scholarship and was an
                 undergraduate researcher in the Duality Lab, advised by Prof. James Davis.
               </p>
@@ -167,6 +182,30 @@ export default function Home() {
             </li>
           ))}
         </ol>
+      </Section>
+
+      <Section id="phd-interests" title="What I Want to Study in a PhD">
+        <div className="max-w-[820px] leading-[1.65] text-ink/90">
+          <p className="mb-5">
+            Each of my projects ended on a question I couldn&rsquo;t answer with the tools I had.
+            These are the three I want to spend a PhD on.
+          </p>
+          <ol className="list-none space-y-5">
+            {phdQuestions.map((q, i) => (
+              <li key={q.title} className="grid grid-cols-[28px_1fr]">
+                <span className="font-semibold text-gold tabular-nums">{i + 1}.</span>
+                <p>
+                  <strong className="font-semibold text-ink">{q.title}</strong> {q.body}
+                </p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-5">
+            The common thread is AI systems that understand and allocate their own
+            computation, rather than simply becoming larger. I&rsquo;m looking for groups working
+            on ML systems, efficient inference, and the theory of training dynamics.
+          </p>
+        </div>
       </Section>
 
       <Section id="recent-news" title="Recent News">

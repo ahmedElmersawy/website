@@ -28,6 +28,23 @@ export const awards: Award[] = [
       "Selected as a Project Fellow for IMS Connect, a mentorship and networking program pairing students with industry researchers.",
   },
   {
+    id: "pearc26-student-fellow",
+    tier: "secondary",
+    title: "PEARC26 Student Program Fellow",
+    org: "Practice and Experience in Advanced Research Computing (PEARC)",
+    date: "2026",
+    description:
+      "Selected for the PEARC26 Student Program, which included a lightning talk introducing my research to the HPC and research-computing community.",
+  },
+  {
+    id: "ieee-r8-travel-grant",
+    tier: "secondary",
+    title: "IEEE Region 8 Travel Grant",
+    org: "IEEE Region 8, for SaTML 2026",
+    date: "2026",
+    description: "A EUR 2,000 travel grant to attend the IEEE Conference on Secure and Trustworthy Machine Learning (SaTML) 2026 in Munich.",
+  },
+  {
     id: "nsf-grant-award",
     tier: "secondary",
     title: "NSF Grant Award",

@@ -1,17 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons/BrandIcons";
 import type { Project } from "@/content/projects";
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+export function ProjectCard({ project }: { project: Project }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+    <article
       className="group relative overflow-hidden rounded-md border border-navy-border bg-navy/50 p-7 transition-colors duration-300 hover:border-gold/45"
     >
       <div className="relative">
@@ -80,6 +73,6 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           </a>
         )}
       </div>
-    </motion.article>
+    </article>
   );
 }

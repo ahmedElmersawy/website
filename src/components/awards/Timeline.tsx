@@ -1,17 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Award as AwardIcon } from "lucide-react";
 import { awards, type Award } from "@/content/awards";
 import { teachingExperience } from "@/content/resume";
 
-function AwardEntry({ award, i }: { award: Award; i: number }) {
+function AwardEntry({ award }: { award: Award }) {
   return (
-    <motion.li
-      initial={{ opacity: 0, x: -16 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+    <li
       className="relative"
     >
       <span className="absolute -left-[2.45rem] flex h-8 w-8 items-center justify-center rounded-full border border-gold bg-paper text-gold">
@@ -29,7 +22,7 @@ function AwardEntry({ award, i }: { award: Award; i: number }) {
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
         {award.description}
       </p>
-    </motion.li>
+    </li>
   );
 }
 
@@ -46,8 +39,8 @@ export function Timeline({ limit }: { limit?: number }) {
     const items = awards.slice(0, limit);
     return (
       <ol className="relative space-y-10 border-l border-navy-border pl-8">
-        {items.map((award, i) => (
-          <AwardEntry key={award.id} award={award} i={i} />
+        {items.map((award) => (
+          <AwardEntry key={award.id} award={award} />
         ))}
       </ol>
     );
@@ -62,8 +55,8 @@ export function Timeline({ limit }: { limit?: number }) {
       <section>
         <SubHeading>Fellowship</SubHeading>
         <ol className="relative space-y-10 border-l border-navy-border pl-8">
-          {primary.map((award, i) => (
-            <AwardEntry key={award.id} award={award} i={i} />
+          {primary.map((award) => (
+            <AwardEntry key={award.id} award={award} />
           ))}
         </ol>
       </section>

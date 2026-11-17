@@ -68,7 +68,7 @@ export default function ResumePage() {
         <a
           href={resumePdfUrl}
           download={resumePdfFilename}
-          className="inline-flex items-center gap-2 rounded bg-gold px-5 py-2.5 text-sm font-semibold text-paper transition-transform hover:scale-[1.03]"
+          className="inline-flex items-center gap-2 rounded bg-gold px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-gold-bright"
         >
           <Download size={16} /> Download PDF
         </a>
@@ -102,23 +102,14 @@ export default function ResumePage() {
         <h2 className="mb-5 text-xl font-medium text-ink">
           Skills
         </h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <dl className="space-y-1.5 text-sm leading-relaxed">
           {skills.map((group) => (
-            <div key={group.category}>
-              <p className="mb-2 text-sm font-medium text-ink">{group.category}</p>
-              <div className="flex flex-wrap gap-1.5">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded border border-navy-border px-2.5 py-0.5 text-xs text-muted"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
+            <div key={group.category} className="sm:grid sm:grid-cols-[180px_1fr] sm:gap-4">
+              <dt className="font-medium text-ink">{group.category}</dt>
+              <dd className="text-muted">{group.items.join(", ")}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
 
       <div>

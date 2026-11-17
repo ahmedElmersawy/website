@@ -1,26 +1,30 @@
 export type NewsItem = {
-  /** Display date. Year only where the exact month isn't recorded in the CV. */
+  /** Display date. Year only where the exact month isn't on record. */
   date: string;
   text: string;
   href?: string;
   linkText?: string;
 };
 
-// Newest first. Every item is drawn from the CV / existing site content.
+// Newest first. Every item is drawn from the CV and confirmed application notes.
 export const news: NewsItem[] = [
   {
-    date: "2026",
-    text: "Submitted Deciding Without Generating, my first-author paper on when a standalone decision model can replace an LLM, to MLSys 2027 (under review).",
+    date: "Oct 2026",
+    text: "Submitted Deciding Without Generating, my first-author paper on when a standalone decision model can replace an LLM inside a deployed system, to MLSys 2027.",
     href: "/papers/deciding-without-generating.pdf",
     linkText: "Preprint",
+  },
+  {
+    date: "Jul 2026",
+    text: "PEARC26 Student Program Fellow; gave a lightning talk on my research to the HPC and research-computing community.",
   },
   {
     date: "Jun 2026",
     text: "Joined Federal Working Group as an AI Solutions Engineer in Washington, DC.",
   },
   {
-    date: "2026",
-    text: "Graduated from Purdue University with a B.S. in Electrical and Computer Engineering.",
+    date: "May 2026",
+    text: "Graduated from Purdue University with a B.S. in Computer Engineering.",
   },
   {
     date: "2026",
@@ -35,12 +39,16 @@ export const news: NewsItem[] = [
     linkText: "Paper",
   },
   {
-    date: "2026",
-    text: "Selected as an IMS Connect Project Fellow at the IEEE International Microwave Symposium.",
+    date: "Mar 2026",
+    text: "Attended IEEE SaTML 2026 in Munich, supported by an IEEE Region 8 travel grant.",
   },
   {
     date: "Jan 2026",
     text: "Teaching assistant for ECE 57000 (graduate Artificial Intelligence) and ECE 20800 at Purdue.",
+  },
+  {
+    date: "Aug 2025",
+    text: "Joined Prof. James Davis's Duality Lab at Purdue as an undergraduate researcher on the Hydra project.",
   },
   {
     date: "2025",

@@ -119,7 +119,7 @@ export const projects: Project[] = [
     description:
       "A 1D CNN with an inception-style multi-branch block and multi-head self-attention, trained directly on synthetic AES S-box power traces to classify the Hamming weight of the leaking intermediate value from raw waveforms, without hand-engineered features.",
     contribution:
-      "Individually built course project: synthetic trace generation, Hamming-weight leakage modeling, the full CNN architecture and training pipeline, and the SNR/trace-averaging analysis connecting it to classical side-channel statistics.",
+      "Course project with Omar Ismaiel; I was responsible for the AI/ML side: the CNN-with-attention architecture, its training pipeline, and the model evaluation.",
     stack: ["Python", "TensorFlow / Keras", "1D CNN + multi-head attention", "NumPy"],
     keyResults: [
       "76.2% top-1 / 99.25% top-3 accuracy classifying the 9-class Hamming weight from noisy synthetic power traces",

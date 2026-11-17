@@ -16,7 +16,7 @@ export type ExperienceEntry = {
 
 export const education: EducationEntry[] = [
   {
-    degree: "Bachelor of Science in Electrical and Computer Engineering",
+    degree: "Bachelor of Science in Computer Engineering",
     institution: "Purdue University",
     location: "West Lafayette, IN",
     date: "2023 - 2026",
@@ -47,7 +47,7 @@ export const researchExperience: ExperienceEntry[] = [
     role: "Undergraduate Research Assistant",
     org: "Purdue University, Duality Lab (Advisor: Prof. James Davis)",
     location: "West Lafayette, IN",
-    date: "05/2026",
+    date: "08/2025 - 05/2026",
     details: [
       "Designed a DPO-based multi-objective LLM optimization framework (Hydra) with an adaptive Dirichlet sampling mechanism that dynamically reweights training objectives, achieving 46.7% latency and 36% energy reduction on held-out benchmarks.",
       "Fine-tuned a 7B-parameter code model (Qwen2.5-Coder-7B-Instruct, QLoRA) on a large-scale preference dataset across 5 system-level metrics using Purdue's HPC cluster infrastructure.",
@@ -126,6 +126,8 @@ export const resumeAwards = [
   "NSF Grant Award",
   "EESAT Student Program Award",
   "IEEE Communications Society Grant Award",
+  "PEARC26 Student Program Fellow (2026)",
+  "IEEE Region 8 Travel Grant, SaTML 2026",
 ];
 
 export const resumePdfUrl = "/resume/ahmed-elmersawy-cv.pdf";

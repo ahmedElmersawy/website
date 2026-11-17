@@ -12,8 +12,8 @@ export function ProjectsGrid({ limit, tier }: { limit?: number; tier?: Project["
     const items = limit ? pool.slice(0, limit) : pool;
     return (
       <div className="grid gap-6 sm:grid-cols-2">
-        {items.map((project, i) => (
-          <ProjectCard key={project.id} project={project} index={i} />
+        {items.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     );
@@ -32,8 +32,8 @@ export function ProjectsGrid({ limit, tier }: { limit?: number; tier?: Project["
               {tierLabels[tier]}
             </p>
             <div className="grid gap-6 sm:grid-cols-2">
-              {items.map((project, i) => (
-                <ProjectCard key={project.id} project={project} index={i} />
+              {items.map((project) => (
+                <ProjectCard key={project.id} project={project} />
               ))}
             </div>
           </div>
