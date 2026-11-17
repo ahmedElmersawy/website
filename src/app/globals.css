@@ -4,22 +4,22 @@
   /* Warm editorial light theme. Token names "navy"/"navy-light"/"navy-border"
      are legacy from an earlier dark palette - kept to avoid renaming every
      usage - but now resolve to warm cream/charcoal tones. */
-  /* Palette: white background, charcoal #24211F, charcoal #24211F, burgundy #692D40,
-     burnt orange #D96B45 (highlights), taupe #B8AA9B (secondary). */
-  --color-paper: #ffffff;
-  --color-navy: #f8f5f4;
-  --color-navy-light: #efe8e6;
-  --color-navy-border: #e3d8d9;
-  --color-gold: #692d40;
-  --color-gold-bright: #4e1f2f;
-  --color-ink: #24211f;
-  --color-muted: #5c544d;
-  --color-muted-dim: #6e6359;
+  /* Palette: background #F7F6F2, text #292B28, accent #777D68 (sage),
+     surface #E7E5DE. Other tones are derived from these. */
+  --color-paper: #f7f6f2;
+  --color-navy: #efeee9;
+  --color-navy-light: #e7e5de;
+  --color-navy-border: #d9d6cd;
+  --color-gold: #777d68;
+  --color-gold-bright: #5d6251;
+  --color-ink: #292b28;
+  --color-muted: #585b55;
+  --color-muted-dim: #6a6d66;
   --color-highlight: #d96b45;
   --color-taupe: #b8aa9b;
-  /* Burgundy-tinted white for cards, callouts and the active nav item. */
-  --color-pale: #f4ecee;
-  --color-rule: #e9e0e1;
+  /* Surface: cards, callouts and the active nav item. */
+  --color-pale: #e7e5de;
+  --color-rule: #dedbd3;
 }
 
 @theme inline {

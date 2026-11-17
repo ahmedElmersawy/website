@@ -66,7 +66,7 @@ export function ProjectCard({ project }: { project: Project }) {
             href={project.githubUrl}
             target="_blank"
             rel="noreferrer noopener"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-gold-bright"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-gold-bright transition-colors hover:text-ink"
           >
             <GithubIcon size={15} /> View on GitHub
             <ArrowUpRight size={14} />

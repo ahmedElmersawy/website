@@ -26,7 +26,7 @@ export function BibtexButton({ bibtex, filename }: { bibtex: string; filename: s
     <button
       type="button"
       onClick={handleClick}
-      className="cursor-pointer text-gold underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
+      className="cursor-pointer text-gold-bright underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
       aria-live="polite"
     >
       {copied ? "BibTeX copied" : "BibTeX"}

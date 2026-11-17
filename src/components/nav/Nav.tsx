@@ -61,8 +61,8 @@ export function Nav() {
                   className={cn(
                     "whitespace-nowrap rounded px-2.5 py-1.5 text-[17px] font-medium transition-colors",
                     active
-                      ? "bg-pale font-semibold text-gold"
-                      : "text-ink/80 hover:bg-pale/60 hover:text-gold",
+                      ? "bg-pale font-semibold text-gold-bright"
+                      : "text-ink/80 hover:bg-pale/60 hover:text-gold-bright",
                   )}
                 >
                   {item.label}
@@ -99,7 +99,7 @@ export function Nav() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "block rounded px-3 py-2.5 text-base font-medium",
-                    active ? "bg-pale text-gold" : "text-ink/80 hover:text-gold",
+                    active ? "bg-pale text-gold-bright" : "text-ink/80 hover:text-gold-bright",
                   )}
                 >
                   {item.label}

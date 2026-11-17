@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 import { resumePdfFilename, resumePdfUrl } from "@/content/resume";
 
 const button =
-  "rounded border border-gold px-2 py-2 text-center text-[15px] font-medium whitespace-nowrap text-gold transition-colors hover:bg-gold hover:text-paper";
+  "rounded border border-gold px-2 py-2 text-center text-[15px] font-medium whitespace-nowrap text-gold-bright transition-colors hover:bg-gold hover:text-paper";
 
 const themes = [
   {
@@ -66,7 +66,7 @@ export default function Home() {
       {/* Identity */}
       <div className="grid items-start gap-10 pb-12 md:grid-cols-[300px_1fr] md:gap-14">
         <aside className="rounded bg-pale px-7 py-8 text-center md:sticky md:top-24">
-          <div className="relative mx-auto h-[170px] w-[170px] overflow-hidden rounded-full border-4 border-paper shadow-[0_12px_30px_-16px_rgba(105,45,64,0.35)] md:h-[190px] md:w-[190px]">
+          <div className="relative mx-auto h-[170px] w-[170px] overflow-hidden rounded-full border-4 border-paper shadow-[0_12px_30px_-16px_rgba(119,125,104,0.35)] md:h-[190px] md:w-[190px]">
             <Image
               src="/images/headshot.jpg"
               alt={`Portrait of ${site.name}`}
@@ -126,19 +126,19 @@ export default function Home() {
 
           <div className="mt-6 rounded-md border border-gold/25 border-l-[3px] border-l-gold bg-pale/50 px-5 py-4 text-ink/85">
             <p>
-              <strong className="font-semibold text-gold">PhD applications:</strong> I am
+              <strong className="font-semibold text-gold-bright">PhD applications:</strong> I am
               applying to PhD programs for Fall 2027 in machine learning and systems. My{" "}
               <a
                 href={resumePdfUrl}
                 download={resumePdfFilename}
-                className="text-gold underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
+                className="text-gold-bright underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
               >
                 CV
               </a>{" "}
               and{" "}
               <Link
                 href="/research"
-                className="text-gold underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
+                className="text-gold-bright underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
               >
                 research page
               </Link>{" "}
@@ -147,7 +147,7 @@ export default function Home() {
           </div>
 
           <details className="group mt-5">
-            <summary className="inline-block cursor-pointer list-none py-1 text-base font-medium text-gold hover:underline hover:underline-offset-[3px] [&::-webkit-details-marker]:hidden">
+            <summary className="inline-block cursor-pointer list-none py-1 text-base font-medium text-gold-bright hover:underline hover:underline-offset-[3px] [&::-webkit-details-marker]:hidden">
               Brief bio <span aria-hidden="true" className="group-open:hidden">→</span>
               <span aria-hidden="true" className="hidden group-open:inline">↑</span>
             </summary>
@@ -173,7 +173,7 @@ export default function Home() {
         <ol className="list-none">
           {themes.map((t, i) => (
             <li key={t.id} className={i === 0 ? "pb-5" : "border-t border-rule py-5"}>
-              <h3 className="relative mb-1.5 pl-6 text-xl text-gold before:absolute before:left-0 before:top-[0.32em] before:text-[15px] before:leading-none before:content-['▶']">
+              <h3 className="relative mb-1.5 pl-6 text-xl text-gold-bright before:absolute before:left-0 before:top-[0.32em] before:text-[15px] before:leading-none before:content-['▶']">
                 <Link href={`/research#${t.id}`} className="hover:underline hover:underline-offset-[3px]">
                   {t.title}
                 </Link>
@@ -193,7 +193,7 @@ export default function Home() {
           <ol className="list-none space-y-5">
             {phdQuestions.map((q, i) => (
               <li key={q.title} className="grid grid-cols-[28px_1fr]">
-                <span className="font-semibold text-gold tabular-nums">{i + 1}.</span>
+                <span className="font-semibold text-gold-bright tabular-nums">{i + 1}.</span>
                 <p>
                   <strong className="font-semibold text-ink">{q.title}</strong> {q.body}
                 </p>
@@ -222,7 +222,7 @@ export default function Home() {
                       href={n.href}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="font-medium text-gold underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
+                      className="font-medium text-gold-bright underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
                     >
                       [{n.linkText ?? "Link"}]
                     </a>
@@ -245,7 +245,7 @@ export default function Home() {
         </ul>
         <Link
           href="/awards"
-          className="mt-6 inline-block text-base font-medium text-gold hover:underline hover:underline-offset-[3px]"
+          className="mt-6 inline-block text-base font-medium text-gold-bright hover:underline hover:underline-offset-[3px]"
         >
           All awards, teaching &amp; service →
         </Link>

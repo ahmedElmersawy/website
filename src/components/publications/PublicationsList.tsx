@@ -15,7 +15,7 @@ export function PublicationsList() {
                   href={pub.pdfUrl}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="transition-colors hover:text-gold"
+                  className="transition-colors hover:text-gold-bright"
                 >
                   {pub.title}
                 </a>
@@ -24,10 +24,10 @@ export function PublicationsList() {
               )}
             </h3>
             <div className="flex flex-shrink-0 flex-wrap items-center gap-1.5">
-              <span className="rounded-sm bg-pale px-2 py-px text-xs font-semibold tracking-[0.03em] whitespace-nowrap text-gold uppercase">
+              <span className="rounded-sm bg-pale px-2 py-px text-xs font-semibold tracking-[0.03em] whitespace-nowrap text-gold-bright uppercase">
                 {pub.venueShort}
               </span>
-              <span className="rounded-sm border border-gold/35 px-2 py-px text-xs font-semibold tracking-[0.03em] whitespace-nowrap text-gold uppercase">
+              <span className="rounded-sm border border-gold/35 px-2 py-px text-xs font-semibold tracking-[0.03em] whitespace-nowrap text-gold-bright uppercase">
                 {pub.status}
               </span>
             </div>
@@ -55,7 +55,7 @@ export function PublicationsList() {
                 href={pub.pdfUrl}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-gold underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
+                className="text-gold-bright underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold"
               >
                 Paper
               </a>

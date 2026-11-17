@@ -63,7 +63,7 @@ export function ContactSection() {
             download={link.download ? resumePdfFilename : undefined}
             className="group flex items-center gap-4 rounded-md border border-navy-border bg-navy/50 p-5 transition-colors hover:border-gold"
           >
-            <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-border text-gold transition-colors group-hover:border-gold">
+            <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-border text-gold-bright transition-colors group-hover:border-gold">
               <link.icon size={18} />
             </span>
             <span>
@@ -79,7 +79,7 @@ export function ContactSection() {
         onClick={copyEmail}
         className="flex w-full items-center gap-4 rounded-md border border-dashed border-navy-border p-5 text-left transition-colors hover:border-gold"
       >
-        <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-border text-gold">
+        <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-border text-gold-bright">
           {copied ? <Check size={18} /> : <Copy size={18} />}
         </span>
         <span>

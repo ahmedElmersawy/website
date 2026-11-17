@@ -7,11 +7,11 @@ function AwardEntry({ award }: { award: Award }) {
     <li
       className="relative"
     >
-      <span className="absolute -left-[2.45rem] flex h-8 w-8 items-center justify-center rounded-full border border-gold bg-paper text-gold">
+      <span className="absolute -left-[2.45rem] flex h-8 w-8 items-center justify-center rounded-full border border-gold bg-paper text-gold-bright">
         <AwardIcon size={15} />
       </span>
       {award.date && (
-        <p className="font-mono text-xs uppercase tracking-wide text-gold">
+        <p className="font-mono text-xs uppercase tracking-wide text-gold-bright">
           {award.date}
         </p>
       )}

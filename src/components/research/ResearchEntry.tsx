@@ -10,7 +10,7 @@ const statusLabel: Record<ResearchProject["status"], string> = {
 };
 
 const link =
-  "text-gold underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold";
+  "text-gold-bright underline decoration-gold/40 underline-offset-[3px] hover:decoration-gold";
 
 function List({ items }: { items: string[] }) {
   return (
@@ -35,7 +35,7 @@ export function ResearchEntry({
     <article id={project.id} className="scroll-mt-24 border-t border-rule py-10 first:border-t-0 first:pt-2">
       <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
         <h2 className="text-2xl font-medium text-ink">{project.title}</h2>
-        <p className="text-sm font-semibold tracking-[0.03em] whitespace-nowrap text-gold uppercase">
+        <p className="text-sm font-semibold tracking-[0.03em] whitespace-nowrap text-gold-bright uppercase">
           {venue} · {statusLabel[project.status]}
         </p>
       </div>
@@ -84,7 +84,7 @@ export function ResearchEntry({
       </div>
 
       <details className="group mt-5">
-        <summary className="inline-block cursor-pointer list-none text-base font-medium text-gold hover:underline hover:underline-offset-[3px] [&::-webkit-details-marker]:hidden">
+        <summary className="inline-block cursor-pointer list-none text-base font-medium text-gold-bright hover:underline hover:underline-offset-[3px] [&::-webkit-details-marker]:hidden">
           <span className="group-open:hidden">Abstract, method &amp; results →</span>
           <span className="hidden group-open:inline">Hide details ↑</span>
         </summary>
